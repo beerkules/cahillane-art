@@ -33,7 +33,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=23">
+<link rel="stylesheet" href="/assets/site.css?v=24">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=5">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=5">
 </head>
@@ -42,7 +42,7 @@ HEAD = """<!DOCTYPE html>
 """
 
 FOOT = """<div id="site-footer"></div>
-<script src="/assets/include.js?v=23" defer></script>
+<script src="/assets/include.js?v=24" defer></script>
 </body>
 </html>
 """
@@ -128,7 +128,7 @@ def build_work(w, prev_w, next_w):
         <button class="thumb" data-src="/assets/works/{esc(w["slug"])}-room.jpg?v=5" aria-label="In situ"><img src="/assets/works/{esc(w["slug"])}-room.jpg?v=5" alt="{esc(w["title"])} in situ" loading="lazy"></button>
         <button class="thumb" data-src="/assets/works/{esc(w["slug"])}-detail.jpg?v=5" aria-label="Detail"><img src="/assets/works/{esc(w["slug"])}-detail.jpg?v=5" alt="{esc(w["title"])} detail" loading="lazy"></button>
       </div>
-      <script>(function(){{var m=document.getElementById('work-main'),t=document.querySelectorAll('.work-thumbs .thumb');t.forEach(function(b){{b.addEventListener('click',function(){{m.src=b.dataset.src;t.forEach(function(x){{x.classList.remove('active')}});b.classList.add('active')}})}})}})();</script>
+      <script>(function(){{var m=document.getElementById('work-main'),t=document.querySelectorAll('.work-thumbs .thumb');t.forEach(function(b){{b.addEventListener('click',function(){{m.src=b.dataset.src;t.forEach(function(x){{x.classList.remove('active')}});b.classList.add('active')}})}});var zw=document.querySelector('.zoom-wrap');if(zw){{zw.addEventListener('mousemove',function(e){{var r=zw.getBoundingClientRect();m.style.transformOrigin=((e.clientX-r.left)/r.width*100)+'% '+((e.clientY-r.top)/r.height*100)+'%'}});zw.addEventListener('mouseenter',function(){{m.style.transform='scale(2.4)'}});zw.addEventListener('mouseleave',function(){{m.style.transform=''}})}}}})();</script>
       <div class="work-nav">{prev_link}{next_link}</div>
     </div>
     <div class="work-info">
