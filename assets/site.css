@@ -54,6 +54,7 @@ a { color:inherit; text-decoration:none; }
   transition:color .2s;
 }
 .nav-links a:hover, .nav-links a.active { color:var(--ink-bright); }
+.nav-close { display:none; }
 .nav-toggle {
   display:none; background:none; border:0; cursor:pointer; color:var(--ink-bright);
   font-size:20px; line-height:1; padding:4px;

@@ -4,7 +4,7 @@
 
 (function () {
   var YEAR = new Date().getFullYear();
-  var INSTAGRAM = "https://instagram.com/"; // TODO: set real handle
+  var INSTAGRAM = "https://instagram.com/benjamincahillane";
   var EMAIL = "info@cahillane.de";
 
   var NAV = [
@@ -44,7 +44,7 @@
           '<a href="/privacy.html">Privacy</a>' +
           '<a href="/legal.html">Legal</a>' +
         '</div>' +
-        '<div class="foot-fine">&copy; ' + YEAR + ' Benjamin Cahillane &middot; Contemporary Artist</div>' +
+        '<div class="foot-fine">&copy; ' + YEAR + ' Benjamin Cahillane</div>' +
       '</footer>';
   }
 
