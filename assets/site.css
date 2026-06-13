@@ -66,7 +66,7 @@ a { color:inherit; text-decoration:none; }
 
 @media (max-width:760px) {
   .nav-toggle { display:block; margin-left:auto; }
-  .nav-word { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); margin:0; line-height:1; }
+  .nav-word { margin:0; line-height:1; }
   .nav-links {
     position:fixed; inset:0; z-index:60;
     flex-direction:column; align-items:center; justify-content:center; gap:34px;
@@ -99,7 +99,9 @@ a { color:inherit; text-decoration:none; }
 .hero .scroll-cue {
   position:absolute; left:0; right:0; bottom:30px; text-align:center;
   z-index:3; animation:cueBounce 2.2s ease-in-out infinite;
+  transition:opacity .45s ease;
 }
+.hero .scroll-cue.is-hidden { animation:none; opacity:0; pointer-events:none; }
 .hero .scroll-cue span {
   display:inline-block; width:26px; height:26px;
   border-right:2px solid #f2f0ea; border-bottom:2px solid #f2f0ea;

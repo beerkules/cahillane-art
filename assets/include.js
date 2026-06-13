@@ -78,6 +78,17 @@
     });
   }
 
+  function wireScrollCue() {
+    var cue = document.querySelector(".scroll-cue");
+    if (!cue) return;
+    var onScroll = function () {
+      if (window.scrollY > 40) cue.classList.add("is-hidden");
+      else cue.classList.remove("is-hidden");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
   function init() {
     var h = document.getElementById("site-header");
     var f = document.getElementById("site-footer");
@@ -85,6 +96,7 @@
     if (f) f.outerHTML = buildFooter();
     wireMenu();
     wireForms();
+    wireScrollCue();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
