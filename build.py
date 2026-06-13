@@ -34,6 +34,8 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
 </head>
 <body>
 <div id="site-header"></div>
@@ -53,7 +55,7 @@ def esc(s):
 def card(w):
     label = STATUS_LABEL.get(w["status"], "")
     return (
-        f'<a class="card" href="/work/{esc(w["slug"])}.html">'
+        f'<a class="card" data-status="{esc(w["status"])}" href="/work/{esc(w["slug"])}.html">'
         f'<div class="card-img"><img src="{esc(w["thumb"])}" alt="{esc(w["title"])}, {esc(w["year"])}" loading="lazy"></div>'
         f'<div class="card-meta">'
         f'<span class="card-title">{esc(w["title"])}</span>'
@@ -77,9 +79,11 @@ def build_works(works):
   <div class="wrap center">
     <div class="eyebrow">Works</div>
     <p class="lead">Original works. Enquire for availability and price.</p>
+    <div class="works-filter"><button data-f="all" class="active">All</button><button data-f="available">Available</button></div>
     <div class="grid grid-3" style="text-align:left">
 {cards}
     </div>
+    <script>(function(){{var b=document.querySelectorAll('.works-filter button'),c=document.querySelectorAll('.grid .card');b.forEach(function(x){{x.addEventListener('click',function(){{b.forEach(function(y){{y.classList.remove('active')}});x.classList.add('active');var f=x.dataset.f;c.forEach(function(k){{k.style.display=(f==='all'||k.dataset.status==='available')?'':'none'}})}})}})}})();</script>
     <p class="form-hint" style="margin-top:48px">Selected works are also available as limited edition prints &mdash; <a href="/editions.html" style="color:var(--ink)">view editions</a>.</p>
   </div>
 </main>
