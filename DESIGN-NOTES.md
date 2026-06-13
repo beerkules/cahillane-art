@@ -32,9 +32,21 @@ Paris painter selling direct online — same funnel we're building (IG → link 
 - Prices semi-hidden / inquiry-based on originals — keeps positioning high, starts a conversation.
 - One collaboration with a known name (L'Atlas) does more for credibility than any amount of boosted posts.
 
+## Naming decision (2026-06-13)
+The mailing list / early-access offer is **"The Private View"** — the real art-world term for the invite-only preview before a show opens. Chosen over "Collectors Circle" (too clubby/common) and "The Reserve" / "First View". The "First view" benefit now matches the name.
+- CTA button: **"Request access"** · success message: "You'll see it first."
+- Lives at `circle.html` for now (filename unchanged to avoid breaking the live URL; can rename to /private-view later if desired).
+
 ## Pricing decision — TIERED (decided 2026-06-13)
 Most artists hide prices on purpose: "if you have to ask" positioning, price flexibility per collector, protecting the market (a public low price caps future value/resale), and because the inquiry itself is the qualified lead. High-value art sells through relationships, not add-to-cart.
-- **Original works → NO public price.** "Price on request" / inquiry. The Collectors Circle email capture *is* our price-on-request button. Aligned with the gallery norm.
+- **Original works → NO public price.** "Price on request" / inquiry. The Private View email capture *is* our price-on-request button. Aligned with the gallery norm.
 - **Prints / editions (if/when introduced) → show prices + checkout.** Lower stakes, transparency converts, true e-commerce.
 - **Red/green availability dots apply to both tiers.**
+
+## Information architecture — originals vs editions (2026-06-13)
+Keep them in **separate sections**, never one grid (mixing a €5k "inquire" original next to a €150 "add to cart" print drags the original's perceived value down and confuses intent).
+- **Works** = originals only · dots · "Inquire" (price on request) · NO prices · no commerce furniture (keeps the gallery feel).
+- **Editions** = prints only · listed prices · add-to-cart · stock/edition count. Term "Editions" (not "Prints"/"Shop") — signals limited + collectible.
+- Optional quiet cross-sell on an original's detail page: "A limited edition print of this work is available →" (price stays in Editions; original page never shows a number).
+- **Launch nav:** Works · About · The Private View · Contact. Add **Editions** only once a real print line exists (empty shop is worse than no shop).
 
