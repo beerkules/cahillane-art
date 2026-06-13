@@ -56,13 +56,17 @@ a { color:inherit; text-decoration:none; }
 .nav-links a:hover, .nav-links a.active { color:var(--ink-bright); }
 .nav-close { display:none; }
 .nav-toggle {
-  display:none; background:none; border:0; cursor:pointer; color:var(--ink-bright);
-  font-size:20px; line-height:1; padding:4px;
+  display:none; background:none; border:0; cursor:pointer; padding:0;
+  position:relative; width:22px; height:14px;
 }
+.nav-toggle span { position:absolute; left:0; top:50%; transform:translateY(-50%); width:22px; height:1.5px; background:var(--ink-bright); }
+.nav-toggle span::before, .nav-toggle span::after { content:''; position:absolute; left:0; width:22px; height:1.5px; background:var(--ink-bright); }
+.nav-toggle span::before { top:-6px; }
+.nav-toggle span::after { top:6px; }
 
 @media (max-width:760px) {
-  .nav-toggle { display:flex; align-items:center; margin-left:auto; }
-  .nav-word { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); margin:0; }
+  .nav-toggle { display:block; margin-left:auto; }
+  .nav-word { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); margin:0; line-height:1; }
   .nav-links {
     position:fixed; inset:0; z-index:60;
     flex-direction:column; align-items:center; justify-content:center; gap:34px;
@@ -93,18 +97,18 @@ a { color:inherit; text-decoration:none; }
 
 /* ---------- Hero scroll cue ---------- */
 .scroll-cue {
-  position:absolute; left:50%; bottom:30px; transform:translateX(-50%);
+  position:absolute; left:0; right:0; bottom:30px; text-align:center;
   z-index:3; animation:cueBounce 2.2s ease-in-out infinite;
 }
 .scroll-cue span {
-  display:block; width:15px; height:15px;
+  display:inline-block; width:15px; height:15px;
   border-right:1.5px solid #f2f0ea; border-bottom:1.5px solid #f2f0ea;
   transform:rotate(45deg);
   filter:drop-shadow(0 2px 4px rgba(0,0,0,.7));
 }
 @keyframes cueBounce {
-  0%, 100% { transform:translateX(-50%) translateY(0);   opacity:.6; }
-  50%      { transform:translateX(-50%) translateY(8px);  opacity:1; }
+  0%, 100% { transform:translateY(0);  opacity:.6; }
+  50%      { transform:translateY(8px); opacity:1; }
 }
 @media (prefers-reduced-motion: reduce) { .scroll-cue { animation:none; } }
 
