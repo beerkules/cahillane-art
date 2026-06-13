@@ -33,7 +33,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=21">
+<link rel="stylesheet" href="/assets/site.css?v=22">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=5">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=5">
 </head>
@@ -42,7 +42,7 @@ HEAD = """<!DOCTYPE html>
 """
 
 FOOT = """<div id="site-footer"></div>
-<script src="/assets/include.js?v=21" defer></script>
+<script src="/assets/include.js?v=22" defer></script>
 </body>
 </html>
 """
