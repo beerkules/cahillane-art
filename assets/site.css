@@ -93,17 +93,18 @@ a { color:inherit; text-decoration:none; }
 
 /* ---------- Hero scroll cue ---------- */
 .scroll-cue {
-  position:absolute; left:50%; bottom:24px; transform:translateX(-50%);
-  z-index:1; opacity:.5; animation:cueBounce 2.2s ease-in-out infinite;
+  position:absolute; left:50%; bottom:30px; transform:translateX(-50%);
+  z-index:3; animation:cueBounce 2.2s ease-in-out infinite;
 }
 .scroll-cue span {
-  display:block; width:11px; height:11px;
-  border-right:1px solid var(--ink); border-bottom:1px solid var(--ink);
+  display:block; width:15px; height:15px;
+  border-right:1.5px solid #f2f0ea; border-bottom:1.5px solid #f2f0ea;
   transform:rotate(45deg);
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.7));
 }
 @keyframes cueBounce {
-  0%, 100% { transform:translateX(-50%) translateY(0);   opacity:.35; }
-  50%      { transform:translateX(-50%) translateY(7px); opacity:.8; }
+  0%, 100% { transform:translateX(-50%) translateY(0);   opacity:.6; }
+  50%      { transform:translateX(-50%) translateY(8px);  opacity:1; }
 }
 @media (prefers-reduced-motion: reduce) { .scroll-cue { animation:none; } }
 
