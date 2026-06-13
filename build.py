@@ -33,7 +33,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=24">
+<link rel="stylesheet" href="/assets/site.css?v=25">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=5">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=5">
 </head>
@@ -42,7 +42,7 @@ HEAD = """<!DOCTYPE html>
 """
 
 FOOT = """<div id="site-footer"></div>
-<script src="/assets/include.js?v=24" defer></script>
+<script src="/assets/include.js?v=25" defer></script>
 </body>
 </html>
 """
@@ -165,17 +165,78 @@ def build_work(w, prev_w, next_w):
         f.write(head + body + FOOT)
 
 
+
+EDITION = {"medium":"Giclée print","run":"Edition of 25","size":"70 × 50 cm","price":"€ 450"}
+
+def edition_card(w):
+    return (
+        f'<a class="card" href="/edition/{esc(w["slug"])}.html">'
+        f'<div class="card-img"><img src="{esc(w["image"])}?v=25" alt="{esc(w["title"])} — limited edition print" loading="lazy"></div>'
+        f'<div class="card-meta"><span class="card-title">{esc(w["title"])}</span><span class="dot available">Available</span></div>'
+        f'<div class="card-sub">{EDITION["medium"]} · {EDITION["run"]} · {EDITION["size"]}</div>'
+        f'<div class="edition-price" style="margin-top:8px">{EDITION["price"]}</div>'
+        f'</a>'
+    )
+
+def build_editions(works):
+    cards = "\n".join(edition_card(w) for w in works)
+    head = HEAD.format(title="Editions — Benjamin Cahillane",
+        desc="Limited edition prints of the Liminal Dimensions — each signed and numbered, with a certificate of authenticity.",
+        og_title="Benjamin Cahillane — Editions", og_image=f"{DOMAIN}/assets/og.jpg", og_url=f"{DOMAIN}/editions.html")
+    body = f"""<main class="section">
+  <div class="wrap center">
+    <div class="eyebrow">Editions</div>
+    <p class="lead">Limited edition prints — numbered and signed.</p>
+    <div class="grid grid-3" style="text-align:left">
+{cards}
+    </div>
+    <p class="form-hint" style="margin-top:48px">Each print accompanies an original from <a href="/works.html" style="color:var(--ink)">Liminal Dimensions</a>.</p>
+  </div>
+</main>
+"""
+    with open(os.path.join(ROOT,"editions.html"),"w") as f: f.write(head+body+FOOT)
+    print("wrote editions.html")
+
+def build_edition(w, prev_w, next_w):
+    head = HEAD.format(title=f'{w["title"]} — Edition — Benjamin Cahillane',
+        desc=f'Limited edition print of {w["title"]}. {EDITION["run"]}, signed and numbered.',
+        og_title=esc(f'{w["title"]} — Edition'), og_image=f'{DOMAIN}{w["image"]}', og_url=f'{DOMAIN}/edition/{w["slug"]}.html')
+    prev_link = f'<a href="/edition/{esc(prev_w["slug"])}.html">&larr; {esc(prev_w["title"])}</a>' if prev_w else '<span></span>'
+    next_link = f'<a href="/edition/{esc(next_w["slug"])}.html">{esc(next_w["title"])} &rarr;</a>' if next_w else '<span></span>'
+    body = f"""<main class="work-detail">
+  <div class="wrap">
+    <div class="work-images">
+      <div class="zoom-wrap"><img id="work-main" class="work-main" src="{esc(w["image"])}?v=25" alt="{esc(w["title"])} edition" width="1024" height="1024"></div>
+      <div class="work-nav">{prev_link}{next_link}</div>
+    </div>
+    <div class="work-info">
+      <h1>{esc(w["title"])}</h1>
+      <div class="specs">Limited edition<br>{EDITION["medium"]} · {EDITION["run"]}<br>{EDITION["size"]}</div>
+      <span class="dot available">Available</span>
+      <p class="work-desc">A signed, numbered Giclée print of the original. Each edition is printed on archival cotton paper and accompanied by a certificate of authenticity.</p>
+      <p class="work-process">{EDITION["price"]} · <a href="/work/{esc(w["slug"])}.html" style="color:var(--ink)">View the original work &rarr;</a></p>
+      <div class="work-actions" style="margin-top:24px"><a class="btn" href="#" data-edition="{esc(w["slug"])}">Add to cart</a></div>
+    </div>
+  </div>
+</main>
+"""
+    os.makedirs(os.path.join(ROOT,"edition"),exist_ok=True)
+    with open(os.path.join(ROOT,"edition",f'{w["slug"]}.html'),"w") as f: f.write(head+body+FOOT)
+
+
 def main():
     with open(os.path.join(ROOT, "assets", "works.json")) as f:
         data = json.load(f)
     works = sorted(data["works"], key=lambda w: w.get("order", 0))
     build_works(works)
+    build_editions(works)
     for i, w in enumerate(works):
         prev_w = works[i - 1] if i > 0 else None
         next_w = works[i + 1] if i < len(works) - 1 else None
         build_work(w, prev_w, next_w)
+        build_edition(w, prev_w, next_w)
     # sitemap + robots
-    pages=["","works.html","editions.html","about.html","contact.html","view.html","legal.html","privacy.html"]+[f"work/{w['slug']}.html" for w in works]
+    pages=["","works.html","editions.html","studio.html","about.html","contact.html","view.html","legal.html","privacy.html"]+[f"work/{w['slug']}.html" for w in works]+[f"edition/{w['slug']}.html" for w in works]
     urls="".join(f"<url><loc>{DOMAIN}/{p}</loc></url>" for p in pages)
     with open(os.path.join(ROOT,"sitemap.xml"),"w") as f:
         f.write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')

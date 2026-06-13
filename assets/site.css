@@ -219,7 +219,7 @@ a { color:inherit; text-decoration:none; }
 .work-nav a:hover { color:var(--ink-bright); }
 @media (min-width:820px) {
   .work-detail .wrap { display:grid; grid-template-columns:1.4fr 1fr; gap:48px; align-items:start; }
-  .work-info { margin-top:0; position:sticky; top:90px; }
+  .work-info { margin-top:0; }
 }
 
 /* ---------- Editions ---------- */
