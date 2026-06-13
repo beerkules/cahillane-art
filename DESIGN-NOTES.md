@@ -25,3 +25,16 @@ Minimalist artist portfolio + shop. Worth borrowing:
 - Curated sections > infinite scroll.
 - Email capture should appear more than once (hero + mid-page), the way it already does on the coming-soon page.
 - Keep the dark, restrained palette we have — it matches mmcgrath's gallery feel.
+
+## alexkuznetsov.org (reference)
+Paris painter selling direct online — same funnel we're building (IG → link in bio → minimal site → direct sale).
+- **Sold / available dots** (red = sold, green = available). Worth copying: scarcity sells, and red dots are the strongest social proof an artist site has ("people buy these"). Use regardless of whether prices are shown.
+- Prices semi-hidden / inquiry-based on originals — keeps positioning high, starts a conversation.
+- One collaboration with a known name (L'Atlas) does more for credibility than any amount of boosted posts.
+
+## Pricing decision — TIERED (decided 2026-06-13)
+Most artists hide prices on purpose: "if you have to ask" positioning, price flexibility per collector, protecting the market (a public low price caps future value/resale), and because the inquiry itself is the qualified lead. High-value art sells through relationships, not add-to-cart.
+- **Original works → NO public price.** "Price on request" / inquiry. The Collectors Circle email capture *is* our price-on-request button. Aligned with the gallery norm.
+- **Prints / editions (if/when introduced) → show prices + checkout.** Lower stakes, transparency converts, true e-commerce.
+- **Red/green availability dots apply to both tiers.**
+
