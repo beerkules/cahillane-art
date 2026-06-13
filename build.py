@@ -76,7 +76,7 @@ def build_works(works):
     body = f"""<main class="section">
   <div class="wrap center">
     <div class="eyebrow">Works</div>
-    <p class="lead">Original works. Each is one of one — enquire for availability and price.</p>
+    <p class="lead">Original works. Enquire for availability and price.</p>
     <div class="grid grid-3" style="text-align:left">
 {cards}
     </div>
