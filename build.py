@@ -108,7 +108,7 @@ def build_work(w, prev_w, next_w):
     if w.get("edition_slug"):
         cross = (
             f'<p class="cross-sell">A limited edition print of this work is available '
-            f'&rarr; <a href="/editions.html#{esc(w["edition_slug"])}">View edition</a></p>'
+            f'&rarr; <a href="/edition/{esc(w["slug"])}.html">View edition</a></p>'
         )
 
     desc_html = f'<p class="work-desc">{esc(w["description"])}</p>' if w.get("description") else ""
