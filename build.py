@@ -33,7 +33,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=27">
+<link rel="stylesheet" href="/assets/site.css?v=28">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=6">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=6">
 </head>
@@ -42,7 +42,7 @@ HEAD = """<!DOCTYPE html>
 """
 
 FOOT = """<div id="site-footer"></div>
-<script src="/assets/include.js?v=27" defer></script>
+<script src="/assets/include.js?v=28" defer></script>
 </body>
 </html>
 """
@@ -128,7 +128,7 @@ def build_work(w, prev_w, next_w):
         <button class="thumb" data-src="/assets/works/{esc(w["slug"])}-room.jpg?v=6" aria-label="In situ"><img src="/assets/works/{esc(w["slug"])}-room.jpg?v=6" alt="{esc(w["title"])} in situ" loading="lazy"></button>
         <button class="thumb" data-src="/assets/works/{esc(w["slug"])}-detail.jpg?v=6" aria-label="Detail"><img src="/assets/works/{esc(w["slug"])}-detail.jpg?v=6" alt="{esc(w["title"])} detail" loading="lazy"></button>
       </div>
-      <script>(function(){{var m=document.getElementById('work-main'),t=document.querySelectorAll('.work-thumbs .thumb');t.forEach(function(b){{b.addEventListener('click',function(){{m.src=b.dataset.src;t.forEach(function(x){{x.classList.remove('active')}});b.classList.add('active')}})}});var zw=document.querySelector('.zoom-wrap');if(zw){{var zd=false;zw.addEventListener('click',function(){{zd=!zd;m.style.transform=zd?'scale(2.4)':'';zw.style.cursor=zd?'zoom-out':'zoom-in'}});zw.addEventListener('mousemove',function(e){{if(!zd)return;var r=zw.getBoundingClientRect();m.style.transformOrigin=((e.clientX-r.left)/r.width*100)+'% '+((e.clientY-r.top)/r.height*100)+'%'}})}}}})();</script>
+      <script>(function(){{var m=document.getElementById('work-main'),t=document.querySelectorAll('.work-thumbs .thumb');t.forEach(function(b){{b.addEventListener('click',function(){{m.src=b.dataset.src;t.forEach(function(x){{x.classList.remove('active')}});b.classList.add('active')}})}});var zw=document.querySelector('.zoom-wrap');if(zw){{var zd=false;var lp=document.createElement('div');lp.className='zoom-loupe';zw.appendChild(lp);zw.addEventListener('click',function(){{zd=!zd;m.style.transform=zd?'scale(2.4)':'';zw.classList.toggle('zoomed',zd);lp.style.display=zd?'block':'none'}});zw.addEventListener('mousemove',function(e){{var r=zw.getBoundingClientRect();var x=e.clientX-r.left,y=e.clientY-r.top;lp.style.left=x+'px';lp.style.top=y+'px';if(zd)m.style.transformOrigin=(x/r.width*100)+'% '+(y/r.height*100)+'%'}});zw.addEventListener('mouseleave',function(){{lp.style.display='none'}});zw.addEventListener('mouseenter',function(){{if(zd)lp.style.display='block'}})}}}})();</script>
       <div class="work-nav">{prev_link}{next_link}</div>
     </div>
     <div class="work-info">
@@ -172,7 +172,7 @@ EDITION_SIZES = [("40 × 50 cm","€ 220"),("60 × 80 cm","€ 380"),("90 × 120
 def edition_card(w):
     return (
         f'<a class="card" href="/edition/{esc(w["slug"])}.html">'
-        f'<div class="card-img"><img src="/assets/works/{esc(w["slug"])}-edition.jpg?v=27" alt="{esc(w["title"])} — limited edition print" loading="lazy"></div>'
+        f'<div class="card-img"><img src="/assets/works/{esc(w["slug"])}-edition.jpg?v=28" alt="{esc(w["title"])} — limited edition print" loading="lazy"></div>'
         f'<div class="card-meta"><span class="card-title">{esc(w["title"])}</span><span class="dot available">Available</span></div>'
         f'<div class="card-sub">{EDITION["medium"]} · {EDITION["run"]}</div>'
         f'</a>'
@@ -207,8 +207,8 @@ def build_edition(w, prev_w, next_w):
     body = f"""<main class="work-detail">
   <div class="wrap">
     <div class="work-images">
-      <div class="zoom-wrap"><img id="work-main" class="work-main" src="/assets/works/{esc(w["slug"])}-edition.jpg?v=27" alt="{esc(w["title"])} edition" width="1024" height="1024"></div>
-      <script>(function(){{var m=document.getElementById('work-main'),zw=document.querySelector('.zoom-wrap');if(zw){{var zd=false;zw.addEventListener('click',function(){{zd=!zd;m.style.transform=zd?'scale(2.4)':'';zw.style.cursor=zd?'zoom-out':'zoom-in'}});zw.addEventListener('mousemove',function(e){{if(!zd)return;var r=zw.getBoundingClientRect();m.style.transformOrigin=((e.clientX-r.left)/r.width*100)+'% '+((e.clientY-r.top)/r.height*100)+'%'}})}}}})();</script>
+      <div class="zoom-wrap"><img id="work-main" class="work-main" src="/assets/works/{esc(w["slug"])}-edition.jpg?v=28" alt="{esc(w["title"])} edition" width="1024" height="1024"></div>
+      <script>(function(){{var m=document.getElementById('work-main'),zw=document.querySelector('.zoom-wrap');if(zw){{var zd=false;var lp=document.createElement('div');lp.className='zoom-loupe';zw.appendChild(lp);zw.addEventListener('click',function(){{zd=!zd;m.style.transform=zd?'scale(2.4)':'';zw.classList.toggle('zoomed',zd);lp.style.display=zd?'block':'none'}});zw.addEventListener('mousemove',function(e){{var r=zw.getBoundingClientRect();var x=e.clientX-r.left,y=e.clientY-r.top;lp.style.left=x+'px';lp.style.top=y+'px';if(zd)m.style.transformOrigin=(x/r.width*100)+'% '+(y/r.height*100)+'%'}});zw.addEventListener('mouseleave',function(){{lp.style.display='none'}});zw.addEventListener('mouseenter',function(){{if(zd)lp.style.display='block'}})}}}})();</script>
       <div class="work-nav">{prev_link}{next_link}</div>
     </div>
     <div class="work-info">

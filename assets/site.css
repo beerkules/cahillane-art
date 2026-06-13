@@ -301,3 +301,8 @@ a { color:inherit; text-decoration:none; }
 .edition-size-label{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .edition-buy select{width:100%;margin-top:10px;padding:13px 14px;background:rgba(10,10,12,.5);color:var(--ink-bright);border:1px solid var(--line-strong);font:300 14px var(--body);letter-spacing:.03em}
 .edition-buy .btn{margin-top:16px;width:100%;text-align:center}
+
+/* Modern zoom loupe (ring follows cursor in zoom mode) */
+.zoom-wrap{position:relative}
+.zoom-wrap.zoomed{cursor:none}
+.zoom-loupe{display:none;position:absolute;width:54px;height:54px;margin:-27px 0 0 -27px;border:1.5px solid #fff;border-radius:50%;pointer-events:none;z-index:6;mix-blend-mode:difference;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
