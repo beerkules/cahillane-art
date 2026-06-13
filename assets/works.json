@@ -2,9 +2,9 @@
   "works": [
     {
       "slug": "threshold-i",
-      "title": "Untitled (Threshold I)",
+      "title": "Dimension One",
       "year": 2026,
-      "status": "available",
+      "status": "sold",
       "dimensions_cm": "90 × 120 cm",
       "dimensions_in": "35½ × 47¼ in",
       "medium": "Acrylic & engraved silver on aluminium",
@@ -18,7 +18,7 @@
     },
     {
       "slug": "deep-water",
-      "title": "Deep Water",
+      "title": "Dimension Two",
       "year": 2026,
       "status": "available",
       "dimensions_cm": "120 × 90 cm",
@@ -34,7 +34,7 @@
     },
     {
       "slug": "petrol-field",
-      "title": "Petrol Field",
+      "title": "Dimension Three",
       "year": 2026,
       "status": "reserved",
       "dimensions_cm": "100 × 100 cm",
@@ -50,7 +50,7 @@
     },
     {
       "slug": "antechamber",
-      "title": "Antechamber",
+      "title": "Dimension Four",
       "year": 2026,
       "status": "available",
       "dimensions_cm": "90 × 120 cm",
@@ -66,7 +66,7 @@
     },
     {
       "slug": "still-depth",
-      "title": "Still Depth",
+      "title": "Dimension Five",
       "year": 2026,
       "status": "sold",
       "dimensions_cm": "100 × 100 cm",
@@ -82,7 +82,7 @@
     },
     {
       "slug": "low-light",
-      "title": "Low Light",
+      "title": "Dimension Six",
       "year": 2026,
       "status": "available",
       "dimensions_cm": "120 × 90 cm",
@@ -98,7 +98,7 @@
     },
     {
       "slug": "the-crossing",
-      "title": "The Crossing",
+      "title": "Dimension Seven",
       "year": 2026,
       "status": "available",
       "dimensions_cm": "90 × 120 cm",
@@ -114,7 +114,7 @@
     },
     {
       "slug": "silver-line",
-      "title": "Silver Line",
+      "title": "Dimension Eight",
       "year": 2025,
       "status": "sold",
       "dimensions_cm": "100 × 100 cm",
@@ -130,7 +130,7 @@
     },
     {
       "slug": "threshold-iv",
-      "title": "Untitled (Threshold IV)",
+      "title": "Dimension Nine",
       "year": 2025,
       "status": "available",
       "dimensions_cm": "90 × 120 cm",
@@ -146,7 +146,7 @@
     },
     {
       "slug": "the-reserve",
-      "title": "The Reserve",
+      "title": "Dimension Ten",
       "year": 2025,
       "status": "available",
       "dimensions_cm": "120 × 90 cm",
@@ -162,7 +162,7 @@
     },
     {
       "slug": "nightfall",
-      "title": "Nightfall",
+      "title": "Dimension Eleven",
       "year": 2026,
       "status": "available",
       "dimensions_cm": "100 × 100 cm",
@@ -178,7 +178,7 @@
     },
     {
       "slug": "the-passage",
-      "title": "The Passage",
+      "title": "Dimension Twelve",
       "year": 2026,
       "status": "available",
       "dimensions_cm": "90 × 120 cm",
