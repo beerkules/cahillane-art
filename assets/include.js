@@ -38,8 +38,6 @@
       '<footer class="site-footer">' +
         '<div class="foot-word">BENJAMIN CAHILLANE</div>' +
         '<div class="foot-links">' +
-          '<a href="/view.html">The Private View</a>' +
-          '<a href="' + INSTAGRAM + '" target="_blank" rel="noopener">Instagram</a>' +
           '<a href="mailto:' + EMAIL + '">Contact</a>' +
           '<a href="/privacy.html">Privacy</a>' +
           '<a href="/legal.html">Legal</a>' +
