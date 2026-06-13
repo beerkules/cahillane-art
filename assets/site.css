@@ -270,3 +270,12 @@ a { color:inherit; text-decoration:none; }
 .work-detail .work-thumbs .thumb{width:74px;height:74px;padding:0;border:1px solid var(--line);background:none;cursor:pointer;overflow:hidden;flex:0 0 auto;transition:border-color .2s}
 .work-detail .work-thumbs .thumb img{width:100%;height:100%;object-fit:cover;aspect-ratio:auto}
 .work-detail .work-thumbs .thumb.active,.work-detail .work-thumbs .thumb:hover{border-color:var(--ink-bright)}
+
+/* Home process block */
+.process-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;margin-top:40px;text-align:left}
+@media(max-width:760px){.process-grid{grid-template-columns:1fr;gap:36px}}
+.process-img{aspect-ratio:1/1;overflow:hidden;border:1px solid var(--line);background:#111}
+.process-img img{width:100%;height:100%;object-fit:cover}
+.process-step h3{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-bright);margin-top:18px}
+.process-step p{font-size:14px;line-height:1.8;color:var(--muted);margin-top:10px}
+.work-process{font-size:13px;line-height:1.8;color:var(--muted);margin-top:14px;border-top:1px solid var(--line);padding-top:14px}

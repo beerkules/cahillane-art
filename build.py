@@ -33,7 +33,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=22">
+<link rel="stylesheet" href="/assets/site.css?v=23">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=5">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=5">
 </head>
@@ -42,7 +42,7 @@ HEAD = """<!DOCTYPE html>
 """
 
 FOOT = """<div id="site-footer"></div>
-<script src="/assets/include.js?v=22" defer></script>
+<script src="/assets/include.js?v=23" defer></script>
 </body>
 </html>
 """
@@ -112,6 +112,9 @@ def build_work(w, prev_w, next_w):
         )
 
     desc_html = f'<p class="work-desc">{esc(w["description"])}</p>' if w.get("description") else ""
+    metal = "gold leaf" if "gold" in w["medium"].lower() else "silver leaf"
+    process_html = f'<p class="work-process">Genuine {metal}, dozens of translucent pigment glazes, engraved by hand. Sold with a signed certificate of authenticity.</p>'
+    artwork_ld = json.dumps({"@context":"https://schema.org","@type":"VisualArtwork","name":w["title"],"image":f"{DOMAIN}{w['image']}","creator":{"@type":"Person","name":"Benjamin Cahillane"},"artform":"Painting","artMedium":w["medium"],"dateCreated":w["year"],"url":f"{DOMAIN}/work/{w['slug']}.html","creativeWorkStatus":w["status"]},ensure_ascii=False)
 
     prev_link = f'<a href="/work/{esc(prev_w["slug"])}.html">&larr; {esc(prev_w["title"])}</a>' if prev_w else '<span></span>'
     next_link = f'<a href="/work/{esc(next_w["slug"])}.html">{esc(next_w["title"])} &rarr;</a>' if next_w else '<span></span>'
@@ -137,6 +140,7 @@ def build_work(w, prev_w, next_w):
       </div>
       <span class="dot {esc(w["status"])}">{esc(label)}</span>
       {desc_html}
+      {process_html}
       {cross}
       <form id="inquire" class="ajax-form inquiry-form" action="https://api.web3forms.com/submit" method="POST" style="margin-top:34px">
         <input type="hidden" name="access_key" value="80a4ed81-4021-4186-8798-02459c5d3434">
@@ -154,6 +158,7 @@ def build_work(w, prev_w, next_w):
     </div>
   </div>
 </main>
+<script type="application/ld+json">{artwork_ld}</script>
 """
     os.makedirs(os.path.join(ROOT, "work"), exist_ok=True)
     with open(os.path.join(ROOT, "work", f'{w["slug"]}.html'), "w") as f:
@@ -169,7 +174,14 @@ def main():
         prev_w = works[i - 1] if i > 0 else None
         next_w = works[i + 1] if i < len(works) - 1 else None
         build_work(w, prev_w, next_w)
-    print(f"wrote {len(works)} work pages -> /work/")
+    # sitemap + robots
+    pages=["","works.html","editions.html","about.html","contact.html","view.html","legal.html","privacy.html"]+[f"work/{w['slug']}.html" for w in works]
+    urls="".join(f"<url><loc>{DOMAIN}/{p}</loc></url>" for p in pages)
+    with open(os.path.join(ROOT,"sitemap.xml"),"w") as f:
+        f.write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')
+    with open(os.path.join(ROOT,"robots.txt"),"w") as f:
+        f.write(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
+    print(f"wrote {len(works)} work pages + sitemap + robots")
 
 
 if __name__ == "__main__":

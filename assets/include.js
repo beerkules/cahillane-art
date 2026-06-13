@@ -5,11 +5,12 @@
 (function () {
   var YEAR = new Date().getFullYear();
   var INSTAGRAM = "https://instagram.com/benjamincahillane";
-  var EMAIL = "info@cahillane.de";
+  var EMAIL = "hello@benjamincahillane.com";
 
   var NAV = [
     { href: "/works.html",    label: "Works" },
     { href: "/about.html",    label: "About" },
+    { href: "/editions.html", label: "Editions" },
     { href: "/view.html",     label: "Private View" },
     { href: "/contact.html",  label: "Contact" }
   ];

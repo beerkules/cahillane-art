@@ -14,7 +14,7 @@
       "image": "/assets/works/threshold-i.jpg",
       "thumb": "/assets/works/threshold-i.jpg",
       "edition_slug": "threshold-i",
-      "description": ""
+      "description": "A corridor of blue light folding inward to a single vanishing point. Up close the silver flares in the cut lines; step back and the room opens into depth."
     },
     {
       "slug": "deep-water",
@@ -30,7 +30,7 @@
       "image": "/assets/works/deep-water.jpg",
       "thumb": "/assets/works/deep-water.jpg",
       "edition_slug": "deep-water",
-      "description": ""
+      "description": "A low horizon where teal light pools along the floor of an unseen hall. The space widens as you move, never quite resolving into a place you could enter."
     },
     {
       "slug": "petrol-field",
@@ -46,7 +46,7 @@
       "image": "/assets/works/petrol-field.jpg",
       "thumb": "/assets/works/petrol-field.jpg",
       "edition_slug": "petrol-field",
-      "description": ""
+      "description": "A petrol chamber held in near-perfect symmetry, its walls drawn only in light. The colour sits between blue and green, shifting with the hour."
     },
     {
       "slug": "antechamber",
@@ -62,7 +62,7 @@
       "image": "/assets/works/antechamber.jpg",
       "thumb": "/assets/works/antechamber.jpg",
       "edition_slug": "antechamber",
-      "description": ""
+      "description": "Violet planes hover at different depths, their edges traced in silver. They float just behind the surface — a structure suspended in the dark."
     },
     {
       "slug": "still-depth",
@@ -78,7 +78,7 @@
       "image": "/assets/works/still-depth.jpg",
       "thumb": "/assets/works/still-depth.jpg",
       "edition_slug": "still-depth",
-      "description": ""
+      "description": "A near-still room with a soft glow held in its deepest layer. The quietest of the dimensions."
     },
     {
       "slug": "low-light",
@@ -94,7 +94,7 @@
       "image": "/assets/works/low-light.jpg",
       "thumb": "/assets/works/low-light.jpg",
       "edition_slug": "low-light",
-      "description": ""
+      "description": "A vast grey floor receding toward a pale light, the lines thinning into distance. Cool, weightless, almost weatherless."
     },
     {
       "slug": "the-crossing",
@@ -110,7 +110,7 @@
       "image": "/assets/works/the-crossing.jpg",
       "thumb": "/assets/works/the-crossing.jpg",
       "edition_slug": "the-crossing",
-      "description": ""
+      "description": "Corridors cross in bright steel-blue, light spilling from more than one direction. The most open and luminous of the series."
     },
     {
       "slug": "silver-line",
@@ -126,7 +126,7 @@
       "image": "/assets/works/silver-line.jpg",
       "thumb": "/assets/works/silver-line.jpg",
       "edition_slug": "silver-line",
-      "description": ""
+      "description": "Pale silver-blue planes, barely there — a dimension drawn in whispers. Light dominates; the dark only frames it."
     },
     {
       "slug": "threshold-iv",
@@ -142,7 +142,7 @@
       "image": "/assets/works/threshold-iv.jpg",
       "thumb": "/assets/works/threshold-iv.jpg",
       "edition_slug": "threshold-iv",
-      "description": ""
+      "description": "Indigo chambers stacked in perspective, each smaller than the last. A descent, or an ascent, depending on where you stand."
     },
     {
       "slug": "the-reserve",
@@ -158,7 +158,7 @@
       "image": "/assets/works/the-reserve.jpg",
       "thumb": "/assets/works/the-reserve.jpg",
       "edition_slug": "the-reserve",
-      "description": ""
+      "description": "Violet planes drift and overlap, the silver lines holding them in place — a structure caught mid-formation."
     },
     {
       "slug": "nightfall",
@@ -174,7 +174,7 @@
       "image": "/assets/works/nightfall.jpg",
       "thumb": "/assets/works/nightfall.jpg",
       "edition_slug": "nightfall",
-      "description": ""
+      "description": "A midnight tunnel pulling toward a far glow, lit from within by the silver beneath. The deepest blue of the collection."
     },
     {
       "slug": "the-passage",
@@ -190,7 +190,7 @@
       "image": "/assets/works/the-passage.jpg",
       "thumb": "/assets/works/the-passage.jpg",
       "edition_slug": "the-passage",
-      "description": ""
+      "description": "A corridor opening toward warm amber light, its lines cut in gold rather than silver. The one warm world among the cool — a threshold."
     }
   ]
 }
