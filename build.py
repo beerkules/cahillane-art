@@ -77,7 +77,7 @@ def build_works(works):
     )
     body = f"""<main class="section">
   <div class="wrap center">
-    <div class="eyebrow">Works</div>
+    <div class="eyebrow">Liminal Dimensions</div>
     <p class="lead">Original works. Enquire for availability and price.</p>
     <div class="works-filter"><button data-f="all" class="active">All</button><button data-f="available">Available</button></div>
     <div class="grid grid-3" style="text-align:left">
