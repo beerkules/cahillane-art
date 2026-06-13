@@ -33,7 +33,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=26">
+<link rel="stylesheet" href="/assets/site.css?v=27">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=5">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=5">
 </head>
@@ -42,7 +42,7 @@ HEAD = """<!DOCTYPE html>
 """
 
 FOOT = """<div id="site-footer"></div>
-<script src="/assets/include.js?v=26" defer></script>
+<script src="/assets/include.js?v=27" defer></script>
 </body>
 </html>
 """
@@ -167,12 +167,12 @@ def build_work(w, prev_w, next_w):
 
 
 EDITION = {"medium":"Giclée print","run":"Edition of 25"}
-EDITION_SIZES = [("50 × 70 cm","€ 450"),("70 × 100 cm","€ 750"),("100 × 140 cm","€ 1,200")]
+EDITION_SIZES = [("40 × 50 cm","€ 220"),("60 × 80 cm","€ 380"),("90 × 120 cm","€ 620")]
 
 def edition_card(w):
     return (
         f'<a class="card" href="/edition/{esc(w["slug"])}.html">'
-        f'<div class="card-img"><img src="/assets/works/{esc(w["slug"])}-edition.jpg?v=26" alt="{esc(w["title"])} — limited edition print" loading="lazy"></div>'
+        f'<div class="card-img"><img src="/assets/works/{esc(w["slug"])}-edition.jpg?v=27" alt="{esc(w["title"])} — limited edition print" loading="lazy"></div>'
         f'<div class="card-meta"><span class="card-title">{esc(w["title"])}</span><span class="dot available">Available</span></div>'
         f'<div class="card-sub">{EDITION["medium"]} · {EDITION["run"]}</div>'
         f'</a>'
@@ -207,7 +207,7 @@ def build_edition(w, prev_w, next_w):
     body = f"""<main class="work-detail">
   <div class="wrap">
     <div class="work-images">
-      <div class="zoom-wrap"><img id="work-main" class="work-main" src="/assets/works/{esc(w["slug"])}-edition.jpg?v=26" alt="{esc(w["title"])} edition" width="1024" height="1024"></div>
+      <div class="zoom-wrap"><img id="work-main" class="work-main" src="/assets/works/{esc(w["slug"])}-edition.jpg?v=27" alt="{esc(w["title"])} edition" width="1024" height="1024"></div>
       <div class="work-nav">{prev_link}{next_link}</div>
     </div>
     <div class="work-info">
@@ -220,6 +220,7 @@ def build_edition(w, prev_w, next_w):
           <select id="edition-size">{size_options}</select>
         </label>
         <a class="btn" id="edition-add" href="#" data-edition="{esc(w["slug"])}">Add to cart</a>
+        <p class="form-hint" style="margin-top:14px">Signed &amp; numbered · shipping calculated at checkout.</p>
       </div>
       <p class="work-process"><a href="/work/{esc(w["slug"])}.html" style="color:var(--ink)">View the original work &rarr;</a></p>
     </div>
