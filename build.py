@@ -115,7 +115,7 @@ def build_work(w, prev_w, next_w):
     body = f"""<main class="work-detail">
   <div class="wrap">
     <div class="work-images">
-      <img src="{esc(w["image"])}" alt="{esc(w["title"])}, {esc(w["year"])}" width="1600" height="1067">
+      <img src="{esc(w["image"])}" alt="{esc(w["title"])}, {esc(w["year"])}" width="1024" height="1024">
     </div>
     <div class="work-info">
       <h1>{esc(w["title"])}</h1>
