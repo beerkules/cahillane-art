@@ -34,8 +34,8 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
-<link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/assets/favicon.png?v=3">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=3">
 </head>
 <body>
 <div id="site-header"></div>
@@ -56,7 +56,7 @@ def card(w):
     label = STATUS_LABEL.get(w["status"], "")
     return (
         f'<a class="card" data-status="{esc(w["status"])}" href="/work/{esc(w["slug"])}.html">'
-        f'<div class="card-img"><img src="{esc(w["thumb"])}" alt="{esc(w["title"])}, {esc(w["year"])}" loading="lazy"></div>'
+        f'<div class="card-img"><img src="{esc(w["thumb"])}?v=3" alt="{esc(w["title"])}, {esc(w["year"])}" loading="lazy"></div>'
         f'<div class="card-meta">'
         f'<span class="card-title">{esc(w["title"])}</span>'
         f'<span class="dot {esc(w["status"])}">{esc(label)}</span>'
@@ -119,10 +119,10 @@ def build_work(w, prev_w, next_w):
     body = f"""<main class="work-detail">
   <div class="wrap">
     <div class="work-images">
-      <img src="{esc(w["image"])}" alt="{esc(w["title"])}, {esc(w["year"])}" width="1024" height="1024">
+      <img src="{esc(w["image"])}?v=3" alt="{esc(w["title"])}, {esc(w["year"])}" width="1024" height="1024">
       <div class="work-thumbs">
-        <img src="/assets/works/{esc(w["slug"])}-room.jpg" alt="{esc(w["title"])} in situ" loading="lazy">
-        <img src="/assets/works/{esc(w["slug"])}-detail.jpg" alt="{esc(w["title"])} detail" loading="lazy">
+        <img src="/assets/works/{esc(w["slug"])}-room.jpg?v=3" alt="{esc(w["title"])} in situ" loading="lazy">
+        <img src="/assets/works/{esc(w["slug"])}-detail.jpg?v=3" alt="{esc(w["title"])} detail" loading="lazy">
       </div>
       <div class="work-nav">{prev_link}{next_link}</div>
     </div>
