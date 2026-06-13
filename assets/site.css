@@ -65,7 +65,7 @@ a { color:inherit; text-decoration:none; }
 .nav-toggle span::after { top:6px; }
 
 @media (max-width:760px) {
-  .nav-toggle { display:block; margin-left:auto; }
+  .nav-toggle { display:block; margin-left:auto; transform:translateY(-2px); }
   .nav-word { margin:0; line-height:1; }
   .nav-links {
     position:fixed; inset:0; z-index:60;
