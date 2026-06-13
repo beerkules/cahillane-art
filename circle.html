@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAHILLANE — Join the Collectors Circle</title>
+<meta name="description" content="Be the first to see the first collection. Private previews and priority on original works from contemporary artist CAHILLANE.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="CAHILLANE — The Collectors Circle">
+<meta property="og:description" content="Be the first to see the first collection. Private previews and priority on original works.">
+<meta property="og:image" content="https://benjamincahillane.com/assets/og.jpg">
+<meta property="og:url" content="https://benjamincahillane.com/circle.html">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    background:#0a0a0c; color:#e9e7e2;
+    font-family:'DM Sans', sans-serif; font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position:relative; min-height:100svh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:56px 24px 40px; overflow:hidden;
+  }
+  .hero .bg {
+    position:absolute; inset:0; z-index:0;
+    background:url('assets/hero.jpg') center 30%/cover no-repeat;
+    opacity:.55;
+  }
+  .hero .bg::after {
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(10,10,12,.55) 0%, rgba(10,10,12,.25) 42%, rgba(10,10,12,.92) 100%);
+  }
+  .hero > * { position:relative; z-index:1; }
+
+  .wordmark {
+    font-family:'Avenir Next','League Spartan',sans-serif; font-weight:600;
+    font-size:clamp(30px, 6.5vw, 58px);
+    letter-spacing:.32em; text-indent:.32em; color:#f2f0ea;
+  }
+  .role {
+    margin-top:18px; font-size:11px; letter-spacing:.5em; text-indent:.5em;
+    text-transform:uppercase; color:#8e8c85;
+  }
+  .line { width:42px; height:1px; background:rgba(233,231,226,.35); margin:38px auto; }
+  .hook {
+    max-width:520px; font-size:clamp(17px,4.4vw,21px); line-height:1.7;
+    color:#d6d4cd; font-style:italic;
+  }
+
+  /* ---------- Forms ---------- */
+  .signup { margin-top:40px; width:100%; max-width:440px; margin-left:auto; margin-right:auto; }
+  .fieldrow {
+    display:flex; flex-wrap:wrap; gap:0;
+    border:1px solid rgba(233,231,226,.3); background:rgba(10,10,12,.45);
+    -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+  }
+  .signup input[type=email] {
+    flex:1 1 200px; padding:16px 18px; background:transparent; border:0; outline:0;
+    color:#f2f0ea; font:300 14px 'DM Sans',sans-serif; letter-spacing:.04em;
+  }
+  .signup input::placeholder { color:#7c7a74; }
+  .signup button {
+    flex:0 0 auto; padding:16px 26px; background:#f2f0ea; color:#0a0a0c; border:0; cursor:pointer;
+    font:600 11px 'Avenir Next','League Spartan',sans-serif; letter-spacing:.25em; text-indent:.05em; text-transform:uppercase;
+    transition:background .25s;
+  }
+  .signup button:hover { background:#fff; }
+  .signup button:disabled { cursor:default; opacity:.7; }
+  .hint { margin-top:14px; font-size:12px; color:#8e8c85; letter-spacing:.06em; }
+  .success { display:none; margin-top:40px; font-size:14px; letter-spacing:.18em; text-transform:uppercase; color:#d6d4cd; }
+  .scrollcue {
+    margin-top:46px; font-size:10px; letter-spacing:.4em; text-indent:.4em;
+    text-transform:uppercase; color:#6f6e68; text-decoration:none; display:inline-block;
+  }
+
+  /* ---------- Invitation / benefits ---------- */
+  .invite { padding:84px 24px; max-width:720px; margin:0 auto; text-align:center; }
+  .eyebrow { font-size:11px; letter-spacing:.5em; text-indent:.5em; text-transform:uppercase; color:#8e8c85; }
+  .invite .statement {
+    margin-top:26px; font-size:clamp(18px,4.6vw,22px); line-height:1.85;
+    color:#cbc9c2; font-style:italic;
+  }
+  .benefits { margin-top:52px; display:grid; gap:0; text-align:left; }
+  .benefit { padding:26px 4px; border-top:1px solid rgba(233,231,226,.12); }
+  .benefit:last-child { border-bottom:1px solid rgba(233,231,226,.12); }
+  .benefit h3 {
+    font:600 12px 'Avenir Next','League Spartan',sans-serif;
+    letter-spacing:.28em; text-transform:uppercase; color:#f2f0ea;
+  }
+  .benefit p { margin-top:10px; font-size:15px; line-height:1.75; color:#a8a69f; }
+
+  /* ---------- Image band ---------- */
+  .band { position:relative; height:58vh; min-height:340px; overflow:hidden; }
+  .band .bg {
+    position:absolute; inset:0;
+    background:url('assets/hero.jpg') center 60%/cover no-repeat;
+    opacity:.6;
+  }
+  .band::after {
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(10,10,12,.85) 0%, rgba(10,10,12,.35) 50%, rgba(10,10,12,.9) 100%);
+  }
+
+  /* ---------- Closing CTA ---------- */
+  .close { padding:84px 24px 96px; max-width:560px; margin:0 auto; text-align:center; }
+  .close h2 {
+    font-family:'Avenir Next','League Spartan',sans-serif; font-weight:600;
+    font-size:clamp(22px,5.5vw,30px); letter-spacing:.16em; color:#f2f0ea; line-height:1.4;
+  }
+  .close p { margin-top:18px; font-size:15px; line-height:1.8; color:#a8a69f; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding:30px 24px 40px; text-align:center;
+    font-size:11px; letter-spacing:.18em; color:#5f5e59;
+    border-top:1px solid rgba(233,231,226,.08);
+  }
+  footer a { color:#8e8c85; text-decoration:none; }
+  footer .ex { margin-top:10px; font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:#4f4e4a; }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="bg" role="img" aria-label="Detail of a large-format artwork: engraved silver lines forming a deep architectural space within dark petrol glazes"></div>
+    <h1 class="wordmark">CAHILLANE</h1>
+    <div class="role">Contemporary Artist</div>
+    <div class="line"></div>
+    <p class="hook">The first collection has not yet been shown. The Circle sees it first.</p>
+
+    <form class="signup" data-placement="hero" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="80a4ed81-4021-4186-8798-02459c5d3434">
+      <input type="hidden" name="subject" value="Collectors Circle signup (hero) — cahillane.art">
+      <input type="hidden" name="from_name" value="cahillane.art">
+      <input type="hidden" name="cta_placement" value="hero">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="fieldrow">
+        <input type="email" name="email" required placeholder="Your email address" aria-label="Email address">
+        <button type="submit">Join the Circle</button>
+      </div>
+      <div class="hint">Be the first to see the first collection.</div>
+    </form>
+    <div class="success">Welcome to the Circle.</div>
+
+    <a class="scrollcue" href="#invitation">What this is ↓</a>
+  </header>
+
+  <!-- INVITATION + BENEFITS -->
+  <section class="invite" id="invitation">
+    <div class="eyebrow">The Collectors Circle</div>
+    <p class="statement">A small, private list for those who want to live with the work before it reaches a gallery wall — and before anyone else.</p>
+
+    <div class="benefits">
+      <div class="benefit">
+        <h3>First view</h3>
+        <p>See the debut collection in full before its public release — with the chance to reserve a piece before it is offered widely.</p>
+      </div>
+      <div class="benefit">
+        <h3>Inside the studio</h3>
+        <p>Quiet, occasional previews of new work as it leaves the studio. No noise, no schedule — only when there is something worth seeing.</p>
+      </div>
+      <div class="benefit">
+        <h3>A direct line</h3>
+        <p>Priority on original works and a direct conversation with the artist — not a queue, not a gallery markup.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE BAND -->
+  <div class="band" role="img" aria-label="Close detail of engraved silver linework across dark petrol glaze"></div>
+
+  <!-- CLOSING CTA -->
+  <section class="close">
+    <h2>Join the Circle</h2>
+    <p>One email when the collection opens. Nothing else. You can leave at any time.</p>
+
+    <form class="signup" data-placement="footer" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="80a4ed81-4021-4186-8798-02459c5d3434">
+      <input type="hidden" name="subject" value="Collectors Circle signup (footer) — cahillane.art">
+      <input type="hidden" name="from_name" value="cahillane.art">
+      <input type="hidden" name="cta_placement" value="footer">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="fieldrow">
+        <input type="email" name="email" required placeholder="Your email address" aria-label="Email address">
+        <button type="submit">Join the Circle</button>
+      </div>
+      <div class="hint">Be the first to see the first collection.</div>
+    </form>
+    <div class="success">Welcome to the Circle.</div>
+  </section>
+
+  <footer>
+    CAHILLANE · <a href="mailto:info@cahillane.de">Contact</a>
+    <div class="ex">Contemporary Artist</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('form.signup').forEach((form) => {
+    const success = form.nextElementSibling; // the .success block follows each form
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      const label = btn.textContent;
+      btn.disabled = true; btn.textContent = '· · ·';
+      try {
+        const res = await fetch(form.action, { method:'POST', body:new FormData(form) });
+        if (!res.ok) throw new Error();
+        form.style.display = 'none';
+        if (success && success.classList.contains('success')) success.style.display = 'block';
+      } catch {
+        btn.disabled = false; btn.textContent = label;
+        alert('Something went wrong — please try again or email info@cahillane.de');
+      }
+    });
+  });
+</script>
+</body>
+</html>
