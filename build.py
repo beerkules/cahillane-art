@@ -35,7 +35,7 @@ HEAD = """<!DOCTYPE html>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="apple-touch-icon" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 </head>
 <body>
 <div id="site-header"></div>
