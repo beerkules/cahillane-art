@@ -89,6 +89,21 @@
     onScroll();
   }
 
+  function wireHeroFade() {
+    var bg = document.querySelector(".hero-bg");
+    if (!bg) return;
+    var m = (bg.style.backgroundImage || "").match(/url\(['"]?(.*?)['"]?\)/);
+    if (!m) return;
+    bg.style.transition = "opacity .9s ease";
+    bg.style.opacity = "0";
+    var reveal = function () { requestAnimationFrame(function () { bg.style.opacity = "1"; }); };
+    var img = new Image();
+    img.onload = reveal;
+    img.onerror = reveal;
+    img.src = m[1];
+    if (img.complete) reveal();
+  }
+
   function init() {
     var h = document.getElementById("site-header");
     var f = document.getElementById("site-footer");
@@ -97,6 +112,7 @@
     wireMenu();
     wireForms();
     wireScrollCue();
+    wireHeroFade();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
