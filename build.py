@@ -33,7 +33,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=31">
+<link rel="stylesheet" href="/assets/site.css?v=32">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=11">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=11">
 </head>
@@ -59,9 +59,9 @@ def card(w):
         f'<div class="card-img"><img src="{esc(w["thumb"])}?v=11" alt="{esc(w["title"])}, {esc(w["year"])}" loading="lazy"></div>'
         f'<div class="card-meta">'
         f'<span class="card-title">{esc(w["title"])}</span>'
-        f'<span class="card-sub">{esc(w["year"])} · {esc(w["dimensions_cm"])}</span>'
         f'<span class="dot {esc(w["status"])}">{esc(label)}</span>'
         f'</div>'
+        f'<div class="card-sub">{esc(w["year"])} · {esc(w["dimensions_cm"])}</div>'
         f'</a>'
     )
 
