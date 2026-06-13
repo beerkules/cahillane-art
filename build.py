@@ -33,7 +33,7 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=25">
+<link rel="stylesheet" href="/assets/site.css?v=26">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=5">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=5">
 </head>
@@ -42,7 +42,7 @@ HEAD = """<!DOCTYPE html>
 """
 
 FOOT = """<div id="site-footer"></div>
-<script src="/assets/include.js?v=25" defer></script>
+<script src="/assets/include.js?v=26" defer></script>
 </body>
 </html>
 """
@@ -166,12 +166,13 @@ def build_work(w, prev_w, next_w):
 
 
 
-EDITION = {"medium":"Giclée print","run":"Edition of 25","size":"70 × 50 cm","price":"€ 450"}
+EDITION = {"medium":"Giclée print","run":"Edition of 25"}
+EDITION_SIZES = [("50 × 70 cm","€ 450"),("70 × 100 cm","€ 750"),("100 × 140 cm","€ 1,200")]
 
 def edition_card(w):
     return (
         f'<a class="card" href="/edition/{esc(w["slug"])}.html">'
-        f'<div class="card-img"><img src="{esc(w["image"])}?v=25" alt="{esc(w["title"])} — limited edition print" loading="lazy"></div>'
+        f'<div class="card-img"><img src="{esc(w["image"])}?v=26" alt="{esc(w["title"])} — limited edition print" loading="lazy"></div>'
         f'<div class="card-meta"><span class="card-title">{esc(w["title"])}</span><span class="dot available">Available</span></div>'
         f'<div class="card-sub">{EDITION["medium"]} · {EDITION["run"]} · {EDITION["size"]}</div>'
         f'<div class="edition-price" style="margin-top:8px">{EDITION["price"]}</div>'
@@ -198,6 +199,7 @@ def build_editions(works):
     print("wrote editions.html")
 
 def build_edition(w, prev_w, next_w):
+    size_options = "".join(f'<option data-price="{p}">{sz} — {p}</option>' for sz,p in EDITION_SIZES)
     head = HEAD.format(title=f'{w["title"]} — Edition — Benjamin Cahillane',
         desc=f'Limited edition print of {w["title"]}. {EDITION["run"]}, signed and numbered.',
         og_title=esc(f'{w["title"]} — Edition'), og_image=f'{DOMAIN}{w["image"]}', og_url=f'{DOMAIN}/edition/{w["slug"]}.html')
@@ -206,16 +208,21 @@ def build_edition(w, prev_w, next_w):
     body = f"""<main class="work-detail">
   <div class="wrap">
     <div class="work-images">
-      <div class="zoom-wrap"><img id="work-main" class="work-main" src="{esc(w["image"])}?v=25" alt="{esc(w["title"])} edition" width="1024" height="1024"></div>
+      <div class="zoom-wrap"><img id="work-main" class="work-main" src="{esc(w["image"])}?v=26" alt="{esc(w["title"])} edition" width="1024" height="1024"></div>
       <div class="work-nav">{prev_link}{next_link}</div>
     </div>
     <div class="work-info">
       <h1>{esc(w["title"])}</h1>
-      <div class="specs">Limited edition<br>{EDITION["medium"]} · {EDITION["run"]}<br>{EDITION["size"]}</div>
+      <div class="specs">Limited edition<br>{EDITION["medium"]} · {EDITION["run"]}<br>Signed &amp; numbered</div>
       <span class="dot available">Available</span>
-      <p class="work-desc">A signed, numbered Giclée print of the original. Each edition is printed on archival cotton paper and accompanied by a certificate of authenticity.</p>
-      <p class="work-process">{EDITION["price"]} · <a href="/work/{esc(w["slug"])}.html" style="color:var(--ink)">View the original work &rarr;</a></p>
-      <div class="work-actions" style="margin-top:24px"><a class="btn" href="#" data-edition="{esc(w["slug"])}">Add to cart</a></div>
+      <p class="work-desc">A signed, numbered Giclée print of the original, on archival cotton paper, with a certificate of authenticity.</p>
+      <div class="edition-buy">
+        <label class="edition-size-label">Size &amp; price
+          <select id="edition-size">{size_options}</select>
+        </label>
+        <a class="btn" id="edition-add" href="#" data-edition="{esc(w["slug"])}">Add to cart</a>
+      </div>
+      <p class="work-process"><a href="/work/{esc(w["slug"])}.html" style="color:var(--ink)">View the original work &rarr;</a></p>
     </div>
   </div>
 </main>
