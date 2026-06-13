@@ -34,8 +34,8 @@ HEAD = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css?v=28">
-<link rel="icon" type="image/png" href="/assets/favicon.png?v=9">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=9">
+<link rel="icon" type="image/png" href="/assets/favicon.png?v=10">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=10">
 </head>
 <body>
 <div id="site-header"></div>
@@ -56,7 +56,7 @@ def card(w):
     label = STATUS_LABEL.get(w["status"], "")
     return (
         f'<a class="card" data-status="{esc(w["status"])}" href="/work/{esc(w["slug"])}.html">'
-        f'<div class="card-img"><img src="{esc(w["thumb"])}?v=9" alt="{esc(w["title"])}, {esc(w["year"])}" loading="lazy"></div>'
+        f'<div class="card-img"><img src="{esc(w["thumb"])}?v=10" alt="{esc(w["title"])}, {esc(w["year"])}" loading="lazy"></div>'
         f'<div class="card-meta">'
         f'<span class="card-title">{esc(w["title"])}</span>'
         f'<span class="dot {esc(w["status"])}">{esc(label)}</span>'
@@ -122,11 +122,11 @@ def build_work(w, prev_w, next_w):
     body = f"""<main class="work-detail">
   <div class="wrap">
     <div class="work-images">
-      <div class="zoom-wrap"><img id="work-main" class="work-main" src="{esc(w["image"])}?v=9" alt="{esc(w["title"])}, {esc(w["year"])}" width="1024" height="1024"></div>
+      <div class="zoom-wrap"><img id="work-main" class="work-main" src="{esc(w["image"])}?v=10" alt="{esc(w["title"])}, {esc(w["year"])}" width="1024" height="1024"></div>
       <div class="work-thumbs">
-        <button class="thumb active" data-src="{esc(w["image"])}?v=9" aria-label="Artwork"><img src="{esc(w["image"])}?v=9" alt="" loading="lazy"></button>
-        <button class="thumb" data-src="/assets/works/{esc(w["slug"])}-room.jpg?v=9" aria-label="In situ"><img src="/assets/works/{esc(w["slug"])}-room.jpg?v=9" alt="{esc(w["title"])} in situ" loading="lazy"></button>
-        <button class="thumb" data-src="/assets/works/{esc(w["slug"])}-detail.jpg?v=9" aria-label="Detail"><img src="/assets/works/{esc(w["slug"])}-detail.jpg?v=9" alt="{esc(w["title"])} detail" loading="lazy"></button>
+        <button class="thumb active" data-src="{esc(w["image"])}?v=10" aria-label="Artwork"><img src="{esc(w["image"])}?v=10" alt="" loading="lazy"></button>
+        <button class="thumb" data-src="/assets/works/{esc(w["slug"])}-room.jpg?v=10" aria-label="In situ"><img src="/assets/works/{esc(w["slug"])}-room.jpg?v=10" alt="{esc(w["title"])} in situ" loading="lazy"></button>
+        <button class="thumb" data-src="/assets/works/{esc(w["slug"])}-detail.jpg?v=10" aria-label="Detail"><img src="/assets/works/{esc(w["slug"])}-detail.jpg?v=10" alt="{esc(w["title"])} detail" loading="lazy"></button>
       </div>
       <script>(function(){{var m=document.getElementById('work-main'),t=document.querySelectorAll('.work-thumbs .thumb');t.forEach(function(b){{b.addEventListener('click',function(){{m.src=b.dataset.src;t.forEach(function(x){{x.classList.remove('active')}});b.classList.add('active')}})}});var zw=document.querySelector('.zoom-wrap');if(zw){{var zd=false;var lp=document.createElement('div');lp.className='zoom-loupe';zw.appendChild(lp);zw.addEventListener('click',function(){{zd=!zd;m.style.transform=zd?'scale(2.4)':'';zw.classList.toggle('zoomed',zd);lp.style.display=zd?'block':'none'}});zw.addEventListener('mousemove',function(e){{var r=zw.getBoundingClientRect();var x=e.clientX-r.left,y=e.clientY-r.top;lp.style.left=x+'px';lp.style.top=y+'px';if(zd)m.style.transformOrigin=(x/r.width*100)+'% '+(y/r.height*100)+'%'}});zw.addEventListener('mouseleave',function(){{lp.style.display='none'}});zw.addEventListener('mouseenter',function(){{if(zd)lp.style.display='block'}})}}}})();</script>
       <div class="work-nav">{prev_link}{next_link}</div>
