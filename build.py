@@ -120,6 +120,10 @@ def build_work(w, prev_w, next_w):
   <div class="wrap">
     <div class="work-images">
       <img src="{esc(w["image"])}" alt="{esc(w["title"])}, {esc(w["year"])}" width="1024" height="1024">
+      <div class="work-thumbs">
+        <img src="/assets/works/{esc(w["slug"])}-room.jpg" alt="{esc(w["title"])} in situ" loading="lazy">
+        <img src="/assets/works/{esc(w["slug"])}-detail.jpg" alt="{esc(w["title"])} detail" loading="lazy">
+      </div>
       <div class="work-nav">{prev_link}{next_link}</div>
     </div>
     <div class="work-info">
