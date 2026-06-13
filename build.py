@@ -120,6 +120,7 @@ def build_work(w, prev_w, next_w):
   <div class="wrap">
     <div class="work-images">
       <img src="{esc(w["image"])}" alt="{esc(w["title"])}, {esc(w["year"])}" width="1024" height="1024">
+      <div class="work-nav">{prev_link}{next_link}</div>
     </div>
     <div class="work-info">
       <h1>{esc(w["title"])}</h1>
@@ -130,9 +131,6 @@ def build_work(w, prev_w, next_w):
       </div>
       <span class="dot {esc(w["status"])}">{esc(label)}</span>
       {desc_html}
-      <div class="work-actions">
-        <a class="btn" href="#inquire">Inquire</a>
-      </div>
       {cross}
       <form id="inquire" class="ajax-form inquiry-form" action="https://api.web3forms.com/submit" method="POST" style="margin-top:34px">
         <input type="hidden" name="access_key" value="80a4ed81-4021-4186-8798-02459c5d3434">
@@ -149,7 +147,6 @@ def build_work(w, prev_w, next_w):
       <div class="form-success">Thank you — we'll be in touch shortly.</div>
     </div>
   </div>
-  <div class="wrap"><div class="work-nav">{prev_link}{next_link}</div></div>
 </main>
 """
     os.makedirs(os.path.join(ROOT, "work"), exist_ok=True)
