@@ -119,11 +119,13 @@ def build_work(w, prev_w, next_w):
     body = f"""<main class="work-detail">
   <div class="wrap">
     <div class="work-images">
-      <img src="{esc(w["image"])}?v=3" alt="{esc(w["title"])}, {esc(w["year"])}" width="1024" height="1024">
+      <img id="work-main" class="work-main" src="{esc(w["image"])}?v=4" alt="{esc(w["title"])}, {esc(w["year"])}" width="1024" height="1024">
       <div class="work-thumbs">
-        <img src="/assets/works/{esc(w["slug"])}-room.jpg?v=3" alt="{esc(w["title"])} in situ" loading="lazy">
-        <img src="/assets/works/{esc(w["slug"])}-detail.jpg?v=3" alt="{esc(w["title"])} detail" loading="lazy">
+        <button class="thumb active" data-src="{esc(w["image"])}?v=4" aria-label="Artwork"><img src="{esc(w["image"])}?v=4" alt="" loading="lazy"></button>
+        <button class="thumb" data-src="/assets/works/{esc(w["slug"])}-room.jpg?v=4" aria-label="In situ"><img src="/assets/works/{esc(w["slug"])}-room.jpg?v=4" alt="{esc(w["title"])} in situ" loading="lazy"></button>
+        <button class="thumb" data-src="/assets/works/{esc(w["slug"])}-detail.jpg?v=4" aria-label="Detail"><img src="/assets/works/{esc(w["slug"])}-detail.jpg?v=4" alt="{esc(w["title"])} detail" loading="lazy"></button>
       </div>
+      <script>(function(){{var m=document.getElementById('work-main'),t=document.querySelectorAll('.work-thumbs .thumb');t.forEach(function(b){{b.addEventListener('click',function(){{m.src=b.dataset.src;t.forEach(function(x){{x.classList.remove('active')}});b.classList.add('active')}})}})}})();</script>
       <div class="work-nav">{prev_link}{next_link}</div>
     </div>
     <div class="work-info">

@@ -22,11 +22,13 @@
 <main class="work-detail">
   <div class="wrap">
     <div class="work-images">
-      <img src="/assets/works/the-crossing.jpg?v=3" alt="The Crossing, 2026" width="1024" height="1024">
+      <img id="work-main" class="work-main" src="/assets/works/the-crossing.jpg?v=4" alt="The Crossing, 2026" width="1024" height="1024">
       <div class="work-thumbs">
-        <img src="/assets/works/the-crossing-room.jpg?v=3" alt="The Crossing in situ" loading="lazy">
-        <img src="/assets/works/the-crossing-detail.jpg?v=3" alt="The Crossing detail" loading="lazy">
+        <button class="thumb active" data-src="/assets/works/the-crossing.jpg?v=4" aria-label="Artwork"><img src="/assets/works/the-crossing.jpg?v=4" alt="" loading="lazy"></button>
+        <button class="thumb" data-src="/assets/works/the-crossing-room.jpg?v=4" aria-label="In situ"><img src="/assets/works/the-crossing-room.jpg?v=4" alt="The Crossing in situ" loading="lazy"></button>
+        <button class="thumb" data-src="/assets/works/the-crossing-detail.jpg?v=4" aria-label="Detail"><img src="/assets/works/the-crossing-detail.jpg?v=4" alt="The Crossing detail" loading="lazy"></button>
       </div>
+      <script>(function(){var m=document.getElementById('work-main'),t=document.querySelectorAll('.work-thumbs .thumb');t.forEach(function(b){b.addEventListener('click',function(){m.src=b.dataset.src;t.forEach(function(x){x.classList.remove('active')});b.classList.add('active')})})})();</script>
       <div class="work-nav"><a href="/work/low-light.html">&larr; Low Light</a><a href="/work/silver-line.html">Silver Line &rarr;</a></div>
     </div>
     <div class="work-info">
