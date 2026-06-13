@@ -201,13 +201,13 @@ def build_edition(w, prev_w, next_w):
     size_options = "".join(f'<option data-price="{p}">{sz} — {p}</option>' for sz,p in EDITION_SIZES)
     head = HEAD.format(title=f'{w["title"]} — Edition — Benjamin Cahillane',
         desc=f'Limited edition print of {w["title"]}. {EDITION["run"]}, signed and numbered.',
-        og_title=esc(f'{w["title"]} — Edition'), og_image=f'{DOMAIN}{w["image"]}', og_url=f'{DOMAIN}/edition/{w["slug"]}.html')
+        og_title=esc(f'{w["title"]} — Edition'), og_image=f'{DOMAIN}/assets/works/{w["slug"]}-edition.jpg', og_url=f'{DOMAIN}/edition/{w["slug"]}.html')
     prev_link = f'<a href="/edition/{esc(prev_w["slug"])}.html">&larr; {esc(prev_w["title"])}</a>' if prev_w else '<span></span>'
     next_link = f'<a href="/edition/{esc(next_w["slug"])}.html">{esc(next_w["title"])} &rarr;</a>' if next_w else '<span></span>'
     body = f"""<main class="work-detail">
   <div class="wrap">
     <div class="work-images">
-      <div class="zoom-wrap"><img id="work-main" class="work-main" src="{esc(w["image"])}?v=26" alt="{esc(w["title"])} edition" width="1024" height="1024"></div>
+      <div class="zoom-wrap"><img id="work-main" class="work-main" src="/assets/works/{esc(w["slug"])}-edition.jpg?v=26" alt="{esc(w["title"])} edition" width="1024" height="1024"></div>
       <div class="work-nav">{prev_link}{next_link}</div>
     </div>
     <div class="work-info">

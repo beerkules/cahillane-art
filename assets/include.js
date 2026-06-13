@@ -9,9 +9,9 @@
 
   var NAV = [
     { href: "/works.html",    label: "Works" },
+    { href: "/editions.html", label: "Editions" },
     { href: "/studio.html",   label: "Studio" },
     { href: "/about.html",    label: "About" },
-    { href: "/editions.html", label: "Editions" },
     { href: "/view.html",     label: "Private View" },
     { href: "/contact.html",  label: "Contact" }
   ];
