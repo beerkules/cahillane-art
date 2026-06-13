@@ -174,8 +174,7 @@ def edition_card(w):
         f'<a class="card" href="/edition/{esc(w["slug"])}.html">'
         f'<div class="card-img"><img src="{esc(w["image"])}?v=26" alt="{esc(w["title"])} — limited edition print" loading="lazy"></div>'
         f'<div class="card-meta"><span class="card-title">{esc(w["title"])}</span><span class="dot available">Available</span></div>'
-        f'<div class="card-sub">{EDITION["medium"]} · {EDITION["run"]} · {EDITION["size"]}</div>'
-        f'<div class="edition-price" style="margin-top:8px">{EDITION["price"]}</div>'
+        f'<div class="card-sub">{EDITION["medium"]} · {EDITION["run"]}</div>'
         f'</a>'
     )
 
