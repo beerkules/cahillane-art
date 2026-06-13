@@ -97,21 +97,6 @@
   }
   .benefit p { margin-top:10px; font-size:15px; line-height:1.75; color:#a8a69f; }
 
-  /* ---------- Gallery strip (PLACEHOLDER imagery — swap for real works) ---------- */
-  .gallery { padding:8px 16px 72px; max-width:820px; margin:0 auto; text-align:center; }
-  .works { margin-top:36px; display:grid; gap:16px; }
-  @media (min-width:640px) { .works { grid-template-columns:1fr 1fr; gap:18px; align-items:start; } }
-  .work { margin:0; }
-  .work img {
-    width:100%; height:auto; display:block;
-    border:1px solid rgba(233,231,226,.1);
-    filter:saturate(.92) brightness(.96); transition:filter .4s, transform .4s;
-  }
-  .work img:hover { filter:saturate(1) brightness(1); transform:scale(1.01); }
-  .work figcaption {
-    margin-top:12px; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:#8e8c85;
-  }
-
   /* ---------- Image band ---------- */
   .band { position:relative; height:58vh; min-height:340px; overflow:hidden; }
   .band .bg {
@@ -187,21 +172,6 @@
         <h3>A direct line</h3>
         <p>Priority on original works and a direct conversation with the artist — not a queue, not a gallery markup.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- GALLERY STRIP — PLACEHOLDER imagery; replace work-01/02 with real artworks and update captions -->
-  <section class="gallery">
-    <div class="eyebrow">A first glimpse</div>
-    <div class="works">
-      <figure class="work">
-        <img src="assets/work-01.jpg" alt="Untitled work — placeholder image" loading="lazy" width="893" height="1600">
-        <figcaption>Untitled I · 2026</figcaption>
-      </figure>
-      <figure class="work">
-        <img src="assets/work-02.jpg" alt="Untitled work — placeholder image" loading="lazy" width="1600" height="1195">
-        <figcaption>Untitled II · 2026</figcaption>
-      </figure>
     </div>
   </section>
 
