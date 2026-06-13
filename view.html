@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/assets/hero.jpg?v=11" fetchpriority="high">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
@@ -31,7 +32,7 @@
   }
   .hero .bg {
     position:absolute; inset:0; z-index:0;
-    background:url('assets/hero.jpg') center 30%/cover no-repeat;
+    background:url('assets/hero.jpg?v=11') center 30%/cover no-repeat;
     opacity:.55;
   }
   .hero .bg::after {
@@ -102,7 +103,7 @@
   .band { position:relative; height:58vh; min-height:340px; overflow:hidden; }
   .band .bg {
     position:absolute; inset:0;
-    background:url('assets/hero.jpg') center 60%/cover no-repeat;
+    background:url('assets/hero.jpg?v=11') center 60%/cover no-repeat;
     opacity:.6;
   }
   .band::after {
