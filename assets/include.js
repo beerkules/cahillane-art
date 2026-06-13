@@ -25,7 +25,7 @@
     return '' +
       '<header class="site-header"><div class="nav-inner">' +
         '<button class="nav-toggle" aria-label="Open menu">&#9776;</button>' +
-        '<a class="nav-word" href="/home.html">BENJAMIN CAHILLANE</a>' +
+        '<a class="nav-word" href="/">BENJAMIN CAHILLANE</a>' +
         '<nav class="nav-links">' +
           '<button class="nav-close" aria-label="Close menu">&times;</button>' +
           links +

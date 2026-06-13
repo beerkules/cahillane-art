@@ -4,113 +4,84 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Benjamin Cahillane — Contemporary Artist</title>
-<meta name="description" content="Benjamin Cahillane — Contemporary Artist.">
+<meta name="description" content="Silence in space. Contemporary paintings by Benjamin Cahillane — originals and limited editions.">
 <meta property="og:title" content="Benjamin Cahillane — Contemporary Artist">
-<meta property="og:description" content="Benjamin Cahillane — Contemporary Artist.">
+<meta property="og:description" content="Silence in space. Contemporary paintings by Benjamin Cahillane.">
 <meta property="og:image" content="https://benjamincahillane.com/assets/og.jpg">
-<meta property="og:url" content="https://benjamincahillane.com">
+<meta property="og:url" content="https://benjamincahillane.com/">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html, body { height:100%; }
-  body {
-    background:#0a0a0c; color:#e9e7e2;
-    font-family:'DM Sans', sans-serif; font-weight:300;
-    display:flex; flex-direction:column;
-  }
-  .bg {
-    position:fixed; inset:0; z-index:0;
-    background:url('assets/hero.jpg') center 30%/cover no-repeat;
-    opacity:.55;
-  }
-  .bg::after {
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(10,10,12,.55) 0%, rgba(10,10,12,.25) 45%, rgba(10,10,12,.88) 100%);
-  }
-  main {
-    position:relative; z-index:1; flex:1;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-align:center; padding:48px 24px;
-  }
-  .wordmark {
-    font-family:'Avenir Next','League Spartan',sans-serif; font-weight:600;
-    font-size:clamp(30px, 6.5vw, 58px);
-    letter-spacing:.3em; text-indent:.3em; color:#f2f0ea;
-  }
-  .wordmark span { display:block; line-height:1.08; }
-  .role {
-    margin-top:20px; font-size:11px; letter-spacing:.5em; text-indent:.5em;
-    text-transform:uppercase; color:#8e8c85;
-  }
-  .line { width:42px; height:1px; background:rgba(233,231,226,.35); margin:44px auto; }
-  .statement {
-    max-width:520px; font-size:16px; line-height:1.9; color:#c9c7c0; font-style:italic;
-  }
-  .coming { margin-top:14px; font-size:12px; letter-spacing:.3em; text-indent:.3em; text-transform:uppercase; color:#8e8c85; }
-  form { margin-top:52px; width:100%; max-width:420px; }
-  .fieldrow { display:flex; border:1px solid rgba(233,231,226,.3); background:rgba(10,10,12,.45); backdrop-filter:blur(6px); }
-  input[type=email] {
-    flex:1; padding:16px 18px; background:transparent; border:0; outline:0;
-    color:#f2f0ea; font:300 14px 'DM Sans',sans-serif; letter-spacing:.04em;
-  }
-  input::placeholder { color:#7c7a74; }
-  button {
-    padding:16px 26px; background:#f2f0ea; color:#0a0a0c; border:0; cursor:pointer;
-    font:600 11px 'Avenir Next','League Spartan',sans-serif; letter-spacing:.25em; text-indent:.05em; text-transform:uppercase;
-    transition:background .25s;
-  }
-  button:hover { background:#fff; }
-  .hint { margin-top:16px; font-size:12px; color:#7c7a74; letter-spacing:.06em; }
-  .success { margin-top:52px; display:none; font-size:14px; letter-spacing:.18em; text-transform:uppercase; color:#c9c7c0; }
-  footer {
-    position:relative; z-index:1;
-    padding:28px 24px; text-align:center;
-    font-size:11px; letter-spacing:.18em; color:#5f5e59;
-  }
-  footer a { color:#8e8c85; text-decoration:none; }
-</style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-  <div class="bg" role="img" aria-label="Detail of a large-format artwork: engraved silver lines forming a deep architectural space within dark petrol glazes"></div>
-  <main>
-    <h1 class="wordmark"><span>BENJAMIN</span><span>CAHILLANE</span></h1>
-    <div class="role">Contemporary Artist</div>
-    <div class="line"></div>
+<div id="site-header"></div>
 
-    <form id="signup" action="https://api.web3forms.com/submit" method="POST">
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg" style="background-image:url('/assets/hero.jpg')" role="img" aria-label="Detail of a large-format artwork in dark petrol glazes with engraved silver linework"></div>
+  <h1 class="wordmark"><span>BENJAMIN</span><span>CAHILLANE</span></h1>
+  <div class="role">Contemporary Artist</div>
+  <div class="rule"></div>
+  <p class="hook">Silence in space.</p>
+</header>
+
+<!-- FEATURED WORKS -->
+<section class="section">
+  <div class="wrap center">
+    <div class="eyebrow">Selected works</div>
+    <div class="grid grid-3" style="text-align:left">
+      <a class="card" href="/work/threshold-i.html">
+        <div class="card-img"><img src="/assets/hero.jpg" alt="Untitled (Threshold I), 2026" loading="lazy"></div>
+        <div class="card-meta"><span class="card-title">Untitled (Threshold I)</span><span class="dot available">Available</span></div>
+        <div class="card-sub">2026 · 150 × 100 cm</div>
+      </a>
+      <a class="card" href="/work/deep-water.html">
+        <div class="card-img"><img src="/assets/og.jpg" alt="Deep Water, 2026" loading="lazy"></div>
+        <div class="card-meta"><span class="card-title">Deep Water</span><span class="dot available">Available</span></div>
+        <div class="card-sub">2026 · 150 × 100 cm</div>
+      </a>
+      <a class="card" href="/work/petrol-field.html">
+        <div class="card-img"><img src="/assets/og.jpg" alt="Petrol Field, 2026" loading="lazy"></div>
+        <div class="card-meta"><span class="card-title">Petrol Field</span><span class="dot reserved">Reserved</span></div>
+        <div class="card-sub">2026 · 180 × 150 cm</div>
+      </a>
+    </div>
+    <div style="margin-top:44px"><a class="btn btn-ghost" href="/works.html">View all works</a></div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="section-tight">
+  <div class="wrap center">
+    <div class="rule"></div>
+    <p class="lead">A first collection — quiet, spacious paintings, made to be lived with.</p>
+  </div>
+</section>
+
+<!-- PRIVATE VIEW CAPTURE -->
+<section class="section">
+  <div class="wrap center">
+    <div class="eyebrow">The Private View</div>
+    <p class="lead">See the first collection before anyone else.</p>
+    <form class="ajax-form" action="https://api.web3forms.com/submit" method="POST" style="margin-top:34px">
       <input type="hidden" name="access_key" value="80a4ed81-4021-4186-8798-02459c5d3434">
-      <input type="hidden" name="subject" value="Private View signup (coming-soon) — cahillane.art">
+      <input type="hidden" name="subject" value="Private View signup (home) — cahillane.art">
       <input type="hidden" name="from_name" value="cahillane.art">
+      <input type="hidden" name="cta_placement" value="home">
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
       <div class="fieldrow">
         <input type="email" name="email" required placeholder="Your email address" aria-label="Email address">
-        <button type="submit">Request access</button>
+        <button type="submit" class="btn">Request access</button>
       </div>
-      <div class="hint">Be the first to see the first collection.</div>
+      <div class="form-hint">Be the first to see the first collection.</div>
     </form>
-    <div class="success" id="success">You'll see it first.</div>
-  </main>
-  <footer>
-    Benjamin Cahillane · <a href="mailto:info@cahillane.de">Contact</a>
-  </footer>
-<script>
-  const form = document.getElementById('signup');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button');
-    btn.disabled = true; btn.textContent = '· · ·';
-    try {
-      const res = await fetch(form.action, { method:'POST', body:new FormData(form) });
-      if (res.ok) { form.style.display='none'; document.getElementById('success').style.display='block'; }
-      else { throw new Error(); }
-    } catch {
-      btn.disabled = false; btn.textContent = 'Request access';
-      alert('Something went wrong — please try again or email info@cahillane.de');
-    }
-  });
-</script>
+    <div class="form-success">You'll see it first.</div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="/assets/include.js" defer></script>
 </body>
 </html>
