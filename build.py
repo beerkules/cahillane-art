@@ -80,6 +80,7 @@ def build_works(works):
     <div class="grid grid-3" style="text-align:left">
 {cards}
     </div>
+    <p class="form-hint" style="margin-top:48px">Selected works are also available as limited edition prints &mdash; <a href="/editions.html" style="color:var(--ink)">view editions</a>.</p>
   </div>
 </main>
 """
