@@ -67,9 +67,9 @@ def card(w):
 def build_works(works):
     cards = "\n".join(card(w) for w in works)
     head = HEAD.format(
-        title="Works — CAHILLANE",
-        desc="Original works by contemporary artist CAHILLANE.",
-        og_title="CAHILLANE — Works",
+        title="Works — Benjamin Cahillane",
+        desc="Original works by contemporary artist Benjamin Cahillane.",
+        og_title="Benjamin Cahillane — Works",
         og_image=f"{DOMAIN}/assets/og.jpg",
         og_url=f"{DOMAIN}/works.html",
     )
@@ -93,9 +93,9 @@ def build_work(w, prev_w, next_w):
     label = STATUS_LABEL.get(w["status"], "")
     desc = w.get("description") or f'{w["title"]}, {w["year"]} — {w["medium"]}, {w["dimensions_cm"]}.'
     head = HEAD.format(
-        title=f'{w["title"]} — CAHILLANE',
+        title=f'{w["title"]} — Benjamin Cahillane',
         desc=esc(desc),
-        og_title=esc(f'{w["title"]} — CAHILLANE'),
+        og_title=esc(f'{w["title"]} — Benjamin Cahillane'),
         og_image=f'{DOMAIN}{w["image"]}',
         og_url=f'{DOMAIN}/work/{w["slug"]}.html',
     )

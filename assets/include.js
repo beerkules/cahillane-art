@@ -25,7 +25,7 @@
     return '' +
       '<header class="site-header"><div class="nav-inner">' +
         '<button class="nav-toggle" aria-label="Open menu">&#9776;</button>' +
-        '<a class="nav-word" href="/home.html">CAHILLANE</a>' +
+        '<a class="nav-word" href="/home.html">BENJAMIN CAHILLANE</a>' +
         '<nav class="nav-links">' +
           '<button class="nav-close" aria-label="Close menu">&times;</button>' +
           links +
@@ -36,13 +36,13 @@
   function buildFooter() {
     return '' +
       '<footer class="site-footer">' +
-        '<div class="foot-word">CAHILLANE</div>' +
+        '<div class="foot-word">BENJAMIN CAHILLANE</div>' +
         '<div class="foot-links">' +
           '<a href="/view.html">The Private View</a>' +
           '<a href="' + INSTAGRAM + '" target="_blank" rel="noopener">Instagram</a>' +
           '<a href="mailto:' + EMAIL + '">Contact</a>' +
         '</div>' +
-        '<div class="foot-fine">&copy; ' + YEAR + ' Cahillane &middot; Contemporary Artist</div>' +
+        '<div class="foot-fine">&copy; ' + YEAR + ' Benjamin Cahillane &middot; Contemporary Artist</div>' +
       '</footer>';
   }
 
