@@ -172,7 +172,7 @@ EDITION_SIZES = [("50 × 70 cm","€ 450"),("70 × 100 cm","€ 750"),("100 × 1
 def edition_card(w):
     return (
         f'<a class="card" href="/edition/{esc(w["slug"])}.html">'
-        f'<div class="card-img"><img src="{esc(w["image"])}?v=26" alt="{esc(w["title"])} — limited edition print" loading="lazy"></div>'
+        f'<div class="card-img"><img src="/assets/works/{esc(w["slug"])}-edition.jpg?v=26" alt="{esc(w["title"])} — limited edition print" loading="lazy"></div>'
         f'<div class="card-meta"><span class="card-title">{esc(w["title"])}</span><span class="dot available">Available</span></div>'
         f'<div class="card-sub">{EDITION["medium"]} · {EDITION["run"]}</div>'
         f'</a>'
