@@ -126,6 +126,13 @@
   }
   footer a { color:#8e8c85; text-decoration:none; }
   footer .ex { margin-top:10px; font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:#4f4e4a; }
+
+  /* ---------- Mobile: stack signup field + full-width button ---------- */
+  @media (max-width:520px) {
+    .fieldrow { flex-direction:column; }
+    .signup input[type=email] { flex:0 0 auto; width:100%; text-align:center; }
+    .signup button { flex:0 0 auto; width:100%; }
+  }
 </style>
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=5">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=5">
