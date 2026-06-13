@@ -41,6 +41,8 @@
           '<a href="/view.html">The Private View</a>' +
           '<a href="' + INSTAGRAM + '" target="_blank" rel="noopener">Instagram</a>' +
           '<a href="mailto:' + EMAIL + '">Contact</a>' +
+          '<a href="/privacy.html">Privacy</a>' +
+          '<a href="/legal.html">Legal</a>' +
         '</div>' +
         '<div class="foot-fine">&copy; ' + YEAR + ' Benjamin Cahillane &middot; Contemporary Artist</div>' +
       '</footer>';
