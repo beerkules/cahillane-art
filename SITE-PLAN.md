@@ -120,10 +120,11 @@ Design language carried from `circle.html`: dark restrained palette (`#0a0a0c` b
 
 **SEO / OG:** per-page `<title>`, description, and OG image. Per-work OG needs the generator approach (see C). Add a `sitemap.xml` + `robots.txt` at launch (keep `view.html` noindex while it's the ad LP).
 
-**Analytics + GDPR (you're on .de — this matters):**
-- **Meta Pixel** requires consent → needs a cookie-consent banner under GDPR/ePrivacy.
-- Recommend **Plausible or similar cookieless analytics** for general traffic (no banner needed) + load the Pixel only after consent for ad campaigns. Keeps the site clean and compliant.
-- Add a short **Impressum + Privacy** page (legally required in Germany).
+**Analytics + privacy (operator is in Switzerland; .com domain):**
+- Governing law is the **Swiss revFADP (nDSG)**, not GDPR. But **GDPR still applies to EU ad traffic** (German/EU visitors), so treat the Pixel accordingly.
+- **Meta Pixel** → consent-gate it for EU visitors (cookie consent under GDPR/ePrivacy).
+- Recommend **Plausible or similar cookieless analytics** for general traffic (no banner needed). Currently **none enabled** (decided: add later when campaigns start).
+- ✅ Done: **Privacy Policy** (revFADP) at `/privacy.html` and **Legal Notice** (Swiss UWG Art. 3(1)(s)) at `/legal.html` — both have `[bracketed]` placeholders to fill (legal name + Swiss address).
 
 **Performance:** compressed responsive images, `width`/`height` on every img (no layout shift), lazy-load below the fold, preconnect fonts, minimal JS.
 
