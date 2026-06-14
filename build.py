@@ -187,7 +187,7 @@ def build_editions(works):
     body = f"""<main class="section">
   <div class="wrap center">
     <div class="eyebrow">Editions</div>
-    <p class="lead">Limited edition prints, signed and numbered. From {FROM_PRICE}.</p>
+    <p class="lead">Limited edition prints, signed and numbered.</p>
     <div class="grid grid-3" style="text-align:left">
 {cards}
     </div>
