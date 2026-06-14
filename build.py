@@ -144,8 +144,8 @@ def build_work(w, prev_w, next_w):
       {cross}
       <form id="inquire" class="ajax-form inquiry-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="80a4ed81-4021-4186-8798-02459c5d3434">
-        <input type="hidden" name="subject" value="Inquiry: {esc(w["title"])} — cahillane.art">
-        <input type="hidden" name="from_name" value="cahillane.art">
+        <input type="hidden" name="subject" value="Inquiry: {esc(w["title"])} — benjamincahillane.com">
+        <input type="hidden" name="from_name" value="benjamincahillane.com">
         <input type="hidden" name="work_title" value="{esc(w["title"])}">
         <input type="hidden" name="work_slug" value="{esc(w["slug"])}">
         <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
@@ -154,7 +154,7 @@ def build_work(w, prev_w, next_w):
         <label>Message<textarea name="message" placeholder="I'd like to enquire about this work."></textarea></label>
         <button type="submit" class="btn">Send inquiry</button>
       </form>
-      <div class="form-success">Thank you — we'll be in touch shortly.</div>
+      <div class="form-success">Thank you. I'll be in touch shortly.</div>
     </div>
   </div>
 </main>

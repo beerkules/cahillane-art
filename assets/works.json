@@ -7,7 +7,7 @@
       "status": "sold",
       "dimensions_cm": "90 × 120 cm",
       "dimensions_in": "35½ × 47¼ in",
-      "medium": "Acrylic & engraved silver on aluminium",
+      "medium": "Oil and engraved silver leaf on aluminium",
       "price": null,
       "featured": true,
       "order": 1,
@@ -23,7 +23,7 @@
       "status": "available",
       "dimensions_cm": "120 × 90 cm",
       "dimensions_in": "47¼ × 35½ in",
-      "medium": "Acrylic & engraved silver on aluminium",
+      "medium": "Oil and engraved silver leaf on aluminium",
       "price": null,
       "featured": false,
       "order": 2,
@@ -39,7 +39,7 @@
       "status": "reserved",
       "dimensions_cm": "100 × 100 cm",
       "dimensions_in": "39¼ × 39¼ in",
-      "medium": "Acrylic & engraved silver on aluminium",
+      "medium": "Oil and engraved silver leaf on aluminium",
       "price": null,
       "featured": false,
       "order": 3,
@@ -55,14 +55,14 @@
       "status": "available",
       "dimensions_cm": "90 × 120 cm",
       "dimensions_in": "35½ × 47¼ in",
-      "medium": "Acrylic & engraved silver on aluminium",
+      "medium": "Oil and engraved silver leaf on aluminium",
       "price": null,
       "featured": false,
       "order": 4,
       "image": "/assets/works/dimension-four.jpg",
       "thumb": "/assets/works/dimension-four.jpg",
       "edition_slug": "dimension-four",
-      "description": "Violet planes hover at different depths, their edges traced in silver. They float just behind the surface — a structure suspended in the dark."
+      "description": "Violet planes hover at different depths, their edges traced in silver. They float just behind the surface, a structure suspended in the dark."
     },
     {
       "slug": "dimension-five",
@@ -71,14 +71,14 @@
       "status": "sold",
       "dimensions_cm": "100 × 100 cm",
       "dimensions_in": "39¼ × 39¼ in",
-      "medium": "Acrylic & engraved silver on aluminium",
+      "medium": "Oil and engraved silver leaf on aluminium",
       "price": null,
       "featured": false,
       "order": 5,
       "image": "/assets/works/dimension-five.jpg",
       "thumb": "/assets/works/dimension-five.jpg",
       "edition_slug": "dimension-five",
-      "description": "A near-still room with a soft glow held in its deepest layer. The quietest of the dimensions."
+      "description": "A near-still room, a soft glow held in its deepest layer. Quiet enough that the eye slows down before it."
     },
     {
       "slug": "dimension-six",
@@ -87,14 +87,14 @@
       "status": "available",
       "dimensions_cm": "100 × 100 cm",
       "dimensions_in": "39¼ × 39¼ in",
-      "medium": "Acrylic & engraved silver on aluminium",
+      "medium": "Oil and engraved silver leaf on aluminium",
       "price": null,
       "featured": false,
       "order": 6,
       "image": "/assets/works/dimension-six.jpg",
       "thumb": "/assets/works/dimension-six.jpg",
       "edition_slug": "dimension-six",
-      "description": "A vast grey floor receding toward a pale light, the lines thinning into distance. Cool, weightless, almost weatherless."
+      "description": "A vast grey floor receding toward a pale light, the lines thinning into distance. Cool and weightless."
     },
     {
       "slug": "dimension-seven",
@@ -103,39 +103,39 @@
       "status": "available",
       "dimensions_cm": "90 × 120 cm",
       "dimensions_in": "35½ × 47¼ in",
-      "medium": "Acrylic & engraved silver on aluminium",
+      "medium": "Oil and engraved silver leaf on aluminium",
       "price": null,
       "featured": false,
       "order": 7,
       "image": "/assets/works/dimension-seven.jpg",
       "thumb": "/assets/works/dimension-seven.jpg",
       "edition_slug": "dimension-seven",
-      "description": "Corridors cross in bright steel-blue, light spilling from more than one direction. The most open and luminous of the series."
+      "description": "Corridors cross in bright steel-blue, with light spilling from more than one direction. The most open and luminous in the collection."
     },
     {
       "slug": "dimension-eight",
       "title": "Dimension Eight",
-      "year": 2025,
+      "year": 2026,
       "status": "sold",
       "dimensions_cm": "100 × 100 cm",
       "dimensions_in": "39¼ × 39¼ in",
-      "medium": "Acrylic & engraved silver on aluminium",
+      "medium": "Oil and engraved silver leaf on aluminium",
       "price": null,
       "featured": false,
       "order": 8,
       "image": "/assets/works/dimension-eight.jpg",
       "thumb": "/assets/works/dimension-eight.jpg",
       "edition_slug": "dimension-eight",
-      "description": "Pale silver-blue planes, barely there — a dimension drawn in whispers. Light dominates; the dark only frames it."
+      "description": "Pale silver-blue planes, barely there, a dimension drawn in whispers. Light dominates; the dark only frames it."
     },
     {
       "slug": "dimension-nine",
       "title": "Dimension Nine",
-      "year": 2025,
+      "year": 2026,
       "status": "available",
       "dimensions_cm": "90 × 120 cm",
       "dimensions_in": "35½ × 47¼ in",
-      "medium": "Acrylic & engraved silver on aluminium",
+      "medium": "Oil and engraved silver leaf on aluminium",
       "price": null,
       "featured": false,
       "order": 9,
@@ -147,18 +147,18 @@
     {
       "slug": "dimension-ten",
       "title": "Dimension Ten",
-      "year": 2025,
+      "year": 2026,
       "status": "available",
       "dimensions_cm": "120 × 90 cm",
       "dimensions_in": "47¼ × 35½ in",
-      "medium": "Acrylic & engraved silver on aluminium",
+      "medium": "Oil and engraved silver leaf on aluminium",
       "price": null,
       "featured": false,
       "order": 10,
       "image": "/assets/works/dimension-ten.jpg",
       "thumb": "/assets/works/dimension-ten.jpg",
       "edition_slug": "dimension-ten",
-      "description": "Violet planes drift and overlap, the silver lines holding them in place — a structure caught mid-formation."
+      "description": "Violet planes drift and overlap, the silver lines holding them in place. A form caught mid-formation."
     },
     {
       "slug": "dimension-eleven",
@@ -167,14 +167,14 @@
       "status": "available",
       "dimensions_cm": "100 × 100 cm",
       "dimensions_in": "39¼ × 39¼ in",
-      "medium": "Acrylic & engraved silver on aluminium",
+      "medium": "Oil and engraved silver leaf on aluminium",
       "price": null,
       "featured": false,
       "order": 11,
       "image": "/assets/works/dimension-eleven.jpg",
       "thumb": "/assets/works/dimension-eleven.jpg",
       "edition_slug": "dimension-eleven",
-      "description": "A midnight tunnel pulling toward a far glow, lit from within by the silver beneath. The deepest blue of the collection."
+      "description": "A midnight tunnel pulling toward a far glow, lit from beneath by the silver. The deepest blue in the collection."
     },
     {
       "slug": "dimension-twelve",
@@ -183,14 +183,14 @@
       "status": "available",
       "dimensions_cm": "90 × 120 cm",
       "dimensions_in": "35½ × 47¼ in",
-      "medium": "Acrylic & engraved gold on aluminium",
+      "medium": "Oil and engraved gold leaf on aluminium",
       "price": null,
       "featured": false,
       "order": 12,
       "image": "/assets/works/dimension-twelve.jpg",
       "thumb": "/assets/works/dimension-twelve.jpg",
       "edition_slug": "dimension-twelve",
-      "description": "A corridor opening toward warm amber light, its lines cut in gold rather than silver. The one warm world among the cool — a threshold."
+      "description": "A corridor opening toward warm amber light, its lines cut in gold rather than silver. The one warm world among the cool, a threshold."
     }
   ]
 }
