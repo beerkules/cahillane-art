@@ -125,6 +125,7 @@ def build_work(w, prev_w, next_w):
       <div class="zoom-wrap"><img id="work-main" class="work-main" src="{esc(w["image"])}?v=17" alt="{esc(w["title"])}, {esc(w["year"])}" width="1024" height="1024"></div>
       <div class="work-thumbs">
         <button class="thumb active" data-src="{esc(w["image"])}?v=17" aria-label="Artwork"><img src="{esc(w["image"])}?v=17" alt="" loading="lazy"></button>
+        <button class="thumb" data-src="/assets/works/{esc(w["slug"])}-framed.jpg?v=17" aria-label="Framed"><img src="/assets/works/{esc(w["slug"])}-framed.jpg?v=17" alt="{esc(w["title"])} framed" loading="lazy"></button>
         <button class="thumb" data-src="/assets/works/{esc(w["slug"])}-room.jpg?v=17" aria-label="In situ"><img src="/assets/works/{esc(w["slug"])}-room.jpg?v=17" alt="{esc(w["title"])} in situ" loading="lazy"></button>
         <button class="thumb" data-src="/assets/works/{esc(w["slug"])}-detail.jpg?v=17" aria-label="Detail"><img src="/assets/works/{esc(w["slug"])}-detail.jpg?v=17" alt="{esc(w["title"])} detail" loading="lazy"></button>
       </div>
