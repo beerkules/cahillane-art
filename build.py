@@ -168,12 +168,13 @@ def build_work(w, prev_w, next_w):
 
 EDITION = {"medium":"Giclée print","run":"Edition of 25"}
 EDITION_SIZES = [("40 × 50 cm","€ 220"),("60 × 80 cm","€ 380"),("90 × 120 cm","€ 620")]
+FROM_PRICE = EDITION_SIZES[0][1]
 
 def edition_card(w):
     return (
         f'<a class="card" href="/edition/{esc(w["slug"])}.html">'
-        f'<div class="card-img"><img src="/assets/works/{esc(w["slug"])}-edition.jpg?v=28" alt="{esc(w["title"])} — limited edition print" loading="lazy"></div>'
-        f'<div class="card-meta"><span class="card-title">{esc(w["title"])}</span><span class="dot available">Available</span></div>'
+        f'<div class="card-img"><img src="{esc(w["image"])}?v=17" alt="{esc(w["title"])} — limited edition print" loading="lazy"></div>'
+        f'<div class="card-meta"><span class="card-title">{esc(w["title"])}</span><span class="card-price" style="font-size:13px;letter-spacing:.04em;color:var(--ink-bright);white-space:nowrap">From {FROM_PRICE}</span></div>'
         f'<div class="card-sub">{EDITION["medium"]} · {EDITION["run"]}</div>'
         f'</a>'
     )
@@ -186,7 +187,7 @@ def build_editions(works):
     body = f"""<main class="section">
   <div class="wrap center">
     <div class="eyebrow">Editions</div>
-    <p class="lead">Limited edition prints — numbered and signed.</p>
+    <p class="lead">Limited edition prints, signed and numbered. From {FROM_PRICE}.</p>
     <div class="grid grid-3" style="text-align:left">
 {cards}
     </div>
@@ -201,13 +202,13 @@ def build_edition(w, prev_w, next_w):
     size_options = "".join(f'<option data-price="{p}">{sz} — {p}</option>' for sz,p in EDITION_SIZES)
     head = HEAD.format(title=f'{w["title"]} — Edition — Benjamin Cahillane',
         desc=f'Limited edition print of {w["title"]}. {EDITION["run"]}, signed and numbered.',
-        og_title=esc(f'{w["title"]} — Edition'), og_image=f'{DOMAIN}/assets/works/{w["slug"]}-edition.jpg', og_url=f'{DOMAIN}/edition/{w["slug"]}.html')
+        og_title=esc(f'{w["title"]} — Edition'), og_image=f'{DOMAIN}{w["image"]}', og_url=f'{DOMAIN}/edition/{w["slug"]}.html')
     prev_link = f'<a href="/edition/{esc(prev_w["slug"])}.html">&larr; {esc(prev_w["title"])}</a>' if prev_w else '<span></span>'
     next_link = f'<a href="/edition/{esc(next_w["slug"])}.html">{esc(next_w["title"])} &rarr;</a>' if next_w else '<span></span>'
     body = f"""<main class="work-detail">
   <div class="wrap">
     <div class="work-images">
-      <div class="zoom-wrap"><img id="work-main" class="work-main" src="/assets/works/{esc(w["slug"])}-edition.jpg?v=28" alt="{esc(w["title"])} edition" width="1024" height="1024"></div>
+      <div class="zoom-wrap"><img id="work-main" class="work-main" src="{esc(w["image"])}?v=17" alt="{esc(w["title"])} edition" width="1024" height="1024"></div>
       <script>(function(){{var m=document.getElementById('work-main'),zw=document.querySelector('.zoom-wrap');if(zw){{var zd=false;var lp=document.createElement('div');lp.className='zoom-loupe';zw.appendChild(lp);zw.addEventListener('click',function(){{zd=!zd;m.style.transform=zd?'scale(2.4)':'';zw.classList.toggle('zoomed',zd);lp.style.display=zd?'block':'none'}});zw.addEventListener('mousemove',function(e){{var r=zw.getBoundingClientRect();var x=e.clientX-r.left,y=e.clientY-r.top;lp.style.left=x+'px';lp.style.top=y+'px';if(zd)m.style.transformOrigin=(x/r.width*100)+'% '+(y/r.height*100)+'%'}});zw.addEventListener('mouseleave',function(){{lp.style.display='none';zw.style.cursor=''}});zw.addEventListener('mouseenter',function(){{lp.style.display='block';zw.style.cursor='none'}})}}}})();</script>
       <div class="work-nav">{prev_link}{next_link}</div>
     </div>
