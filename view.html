@@ -28,8 +28,9 @@
   /* ---------- Hero ---------- */
   .hero {
     position:relative;
-    display:flex; flex-direction:column; align-items:center;
-    text-align:center; padding:150px 24px 120px; overflow:hidden;
+    min-height:auto;
+    display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+    text-align:center; padding:72px 24px 52px; overflow:hidden;
   }
   .hero .bg {
     position:absolute; inset:0; z-index:0;
@@ -85,7 +86,7 @@
   }
 
   /* ---------- Invitation / benefits ---------- */
-  .invite { padding:84px 24px; max-width:720px; margin:0 auto; text-align:center; }
+  .invite { padding:56px 24px 64px; max-width:720px; margin:0 auto; text-align:center; }
   .eyebrow { font-size:11px; letter-spacing:.5em; text-indent:.5em; text-transform:uppercase; color:#8e8c85; }
   .invite .statement {
     margin-top:26px; font-size:clamp(18px,4.6vw,22px); line-height:1.85;
@@ -166,7 +167,7 @@
   <!-- INVITATION + BENEFITS -->
   <section class="invite" id="invitation">
     <div class="eyebrow">The Private View</div>
-    <p class="statement">A small, private list for those who want to live with the work before it reaches a gallery wall — and before anyone else.</p>
+    <p class="statement">A small, private list for those who want to live with the work before it reaches anyone else.</p>
 
     <div class="benefits">
       <div class="benefit">
@@ -206,10 +207,6 @@
     <div class="success">You'll see it first.</div>
   </section>
 
-  <footer>
-    Benjamin Cahillane · <a href="mailto:hello@benjamincahillane.com">Contact</a>
-    <div class="ex">Contemporary Artist</div>
-  </footer>
 
 <script>
   document.querySelectorAll('form.signup').forEach((form) => {
