@@ -105,6 +105,17 @@
     if (img.complete) reveal();
   }
 
+  function wireHeaderScroll() {
+    var hdr = document.querySelector(".site-header");
+    if (!hdr) return;
+    var onScroll = function () {
+      if (window.scrollY > 30) hdr.classList.add("scrolled");
+      else hdr.classList.remove("scrolled");
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
   function init() {
     var h = document.getElementById("site-header");
     var f = document.getElementById("site-footer");
@@ -113,6 +124,7 @@
     wireMenu();
     wireForms();
     wireScrollCue();
+    wireHeaderScroll();
     wireHeroFade();
   }
 
