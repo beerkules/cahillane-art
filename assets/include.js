@@ -12,7 +12,6 @@
     { href: "/editions.html", label: "Editions" },
     { href: "/studio.html",   label: "Studio" },
     { href: "/about.html",    label: "About" },
-    { href: "/view.html",     label: "Private View" },
     { href: "/contact.html",  label: "Contact" }
   ];
 
