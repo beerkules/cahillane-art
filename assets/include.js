@@ -38,13 +38,15 @@
   function buildFooter() {
     return '' +
       '<footer class="site-footer">' +
-        '<div class="foot-word"><img src="/assets/logo.png?v=1" alt="Benjamin Cahillane" style="height:30px;width:auto;display:inline-block"></div>' +
-        '<div class="foot-links">' +
-          '<a href="mailto:' + EMAIL + '">Contact</a>' +
-          '<a href="/privacy.html">Privacy</a>' +
-          '<a href="/legal.html">Legal</a>' +
+        '<div class="foot-word"><img src="/assets/logo.png?v=1" alt="Benjamin Cahillane" style="height:28px;width:auto;display:inline-block"></div>' +
+        '<div class="foot-right">' +
+          '<div class="foot-links">' +
+            '<a href="mailto:' + EMAIL + '">Contact</a>' +
+            '<a href="/privacy.html">Privacy</a>' +
+            '<a href="/legal.html">Legal</a>' +
+          '</div>' +
+          '<div class="foot-fine">&copy; ' + YEAR + ' Benjamin Cahillane</div>' +
         '</div>' +
-        '<div class="foot-fine">&copy; ' + YEAR + ' Benjamin Cahillane</div>' +
       '</footer>';
   }
 

@@ -14,22 +14,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="/assets/works/dimension-one.jpg?v=17" fetchpriority="high">
-<link rel="stylesheet" href="/assets/site.css?v=33">
-<link rel="icon" type="image/png" href="/assets/favicon.png?v=18">
+<link rel="stylesheet" href="/assets/site.css?v=34">
+<link rel="icon" type="image/png" href="/assets/favicon.png?v=19">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=18">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":["Person"],"name":"Benjamin Cahillane","url":"https://benjamincahillane.com","sameAs":["https://instagram.com/benjamincahillane"],"jobTitle":"Contemporary Artist"}</script>
 <style>
-  .hero.hero-split{min-height:calc(100svh - 57px);display:grid;grid-template-columns:0.78fr 1.22fr;align-items:stretch;padding:0;text-align:left;position:relative;overflow:hidden;background:#0a0a0c;}
+  .site-header{position:fixed;left:0;right:0;top:0;}
+  .hero.hero-split{min-height:100svh;display:grid;grid-template-columns:0.78fr 1.22fr;align-items:stretch;padding:0;text-align:left;position:relative;overflow:hidden;background:#0a0a0c;}
   .hero-split .hero-art{position:relative;background-size:220%;background-position:center;}
   .hero-split .hero-art::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0a0a0c 0%,rgba(10,10,12,.7) 20%,rgba(10,10,12,0) 60%);}
   .hero-split .hero-text{display:flex;flex-direction:column;justify-content:center;padding:0 24px 0 max(24px, calc((100vw - var(--maxw)) / 2 + 24px));position:relative;z-index:2;}
-  .hero-split .hero-text .role{margin-top:18px;}
-  .hero-split .hero-text .hook{margin-top:26px;}
+  .hero-headline{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.8vw,52px);line-height:1.12;letter-spacing:.01em;color:var(--ink-bright);}
+  .hero-headline span{display:block;}
+  .hero-cta{margin-top:36px;align-self:flex-start;}
   @media(max-width:860px){
     .hero.hero-split{grid-template-columns:1fr;min-height:auto;}
     .hero-split .hero-art{min-height:48vh;order:1;}
     .hero-split .hero-art::after{background:linear-gradient(180deg,rgba(10,10,12,0) 45%,#0a0a0c 100%);}
-    .hero-split .hero-text{order:2;padding:44px 24px 60px;text-align:center;align-items:center;}
+    .hero-split .hero-text{order:2;padding:48px 24px 64px;text-align:center;align-items:center;}
+    .hero-cta{align-self:center;}
   }
 </style>
 </head>
@@ -39,8 +42,8 @@
 <!-- HERO -->
 <header class="hero hero-split">
   <div class="hero-text">
-    <h1 class="wordmark"><span>BENJAMIN</span><span>CAHILLANE</span></h1>
-    <p class="hook">Creating dimensional worlds.</p>
+    <h1 class="hero-headline"><span>Creating</span><span>dimensional</span><span>worlds.</span></h1>
+    <a class="btn hero-cta" href="/works.html">View Works</a>
   </div>
   <div class="hero-art" style="background-image:url('/assets/works/dimension-one.jpg?v=17')" role="img" aria-label="Engraved silver linework forming a deep architectural space in dark glazes"></div>
 </header>
@@ -115,6 +118,6 @@
 </section>
 
 <div id="site-footer"></div>
-<script src="/assets/include.js?v=29" defer></script>
+<script src="/assets/include.js?v=30" defer></script>
 </body>
 </html>
