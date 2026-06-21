@@ -9,7 +9,6 @@
 
   var NAV = [
     { href: "/works.html",    label: "Works" },
-    { href: "/studio.html",   label: "Studio" },
     { href: "/about.html",    label: "About" },
     { href: "/contact.html",  label: "Contact" }
   ];
