@@ -12,6 +12,7 @@ Run after editing works.json:   python3 build.py
 """
 import json
 import os
+import re
 import html
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -170,8 +171,18 @@ def build_work(w, prev_w, next_w):
 
 
 EDITION = {"medium":"Giclée print","run":"Edition of 25"}
-EDITION_SIZES = [("45 × 60 cm","€ 450"),("60 × 80 cm","€ 650"),("75 × 100 cm","€ 850"),("90 × 120 cm","€ 1050")]
-FROM_PRICE = EDITION_SIZES[0][1]
+EDITION_PORTRAIT  = [("45 × 60 cm","€ 450"),("60 × 80 cm","€ 650"),("75 × 100 cm","€ 850"),("90 × 120 cm","€ 1050")]
+EDITION_LANDSCAPE = [("60 × 45 cm","€ 450"),("80 × 60 cm","€ 650"),("100 × 75 cm","€ 850"),("120 × 90 cm","€ 1050")]
+EDITION_SQUARE    = [("50 × 50 cm","€ 450"),("70 × 70 cm","€ 650"),("85 × 85 cm","€ 850"),("100 × 100 cm","€ 1050")]
+FROM_PRICE = EDITION_PORTRAIT[0][1]
+
+def edition_sizes_for(w):
+    nums = re.findall(r"\d+", w.get("dimensions_cm",""))
+    if len(nums) >= 2:
+        a, b = int(nums[0]), int(nums[1])
+        if a == b: return EDITION_SQUARE
+        if a > b:  return EDITION_LANDSCAPE
+    return EDITION_PORTRAIT
 
 def edition_card(w):
     return (
@@ -202,7 +213,7 @@ def build_editions(works):
     print("wrote editions.html")
 
 def build_edition(w, prev_w, next_w):
-    size_options = "".join(f'<option data-price="{p}">{sz} — {p}</option>' for sz,p in EDITION_SIZES)
+    size_options = "".join(f'<option data-price="{p}">{sz} — {p}</option>' for sz,p in edition_sizes_for(w))
     head = HEAD.format(title=f'{w["title"]} — Edition — Benjamin Cahillane',
         desc=f'Limited edition print of {w["title"]}. {EDITION["run"]}, signed and numbered.',
         og_title=esc(f'{w["title"]} — Edition'), og_image=f'{DOMAIN}{w["image"]}', og_url=f'{DOMAIN}/edition/{w["slug"]}.html')
