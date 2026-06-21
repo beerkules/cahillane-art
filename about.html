@@ -16,6 +16,14 @@
 <link rel="stylesheet" href="/assets/site.css?v=37">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=24">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=24">
+<style>
+  .about-grid{display:grid;grid-template-columns:0.82fr 1.18fr;gap:50px;align-items:start;max-width:960px;margin:46px auto 0}
+  .about-grid .about-img img{width:100%;height:auto;display:block;border:1px solid var(--line)}
+  .about-text{color:#bdbbb4;line-height:1.9;font-size:16px}
+  .about-text p+p{margin-top:18px}
+  .about-meta{max-width:760px;margin:0 auto}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:28px;max-width:520px}}
+</style>
 </head>
 <body>
 <div id="site-header"></div>
@@ -24,14 +32,15 @@
   <div class="wrap">
     <div class="center"><div class="eyebrow">About</div></div>
 
-    <div style="max-width:760px;margin:48px auto 0">
-      <img src="/assets/about-portrait.jpg?v=19" alt="Benjamin Cahillane in the studio" style="width:100%;height:auto;border:1px solid var(--line)">
-
-      <div style="margin-top:40px;color:#bdbbb4;line-height:1.9;font-size:16px">
+    <div class="about-grid">
+      <div class="about-img"><img src="/assets/about-portrait.jpg?v=19" alt="Benjamin Cahillane before a large-format work"></div>
+      <div class="about-text">
         <p>Benjamin Cahillane is a contemporary artist. His paintings are built on genuine precious metal, layered with translucent glazes, then engraved by hand into architectural depth: large-format worlds in silver and shadow.</p>
-        <p style="margin-top:18px">He began with abstract painting and an early group exhibition in Hamburg. He lives and works in Switzerland.</p>
+        <p>He began with abstract painting and an early group exhibition in Hamburg. He lives and works in Switzerland.</p>
       </div>
+    </div>
 
+    <div class="about-meta" style="margin-top:64px">
       <!-- Reveal once real shows exist -->
       <div style="margin-top:48px">
         <div class="eyebrow">Selected exhibitions</div>
