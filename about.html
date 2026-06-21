@@ -22,8 +22,9 @@
   .about-text{color:#bdbbb4;line-height:1.9;font-size:16px}
   .about-text p+p{margin-top:18px}
   .about-text .about-statement{font-style:italic;font-size:20px;line-height:1.7;color:#e9e7e2;margin:0 0 28px}
-  .about-text .about-statement .by{display:block;font-style:normal;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8e8c85;margin-top:16px}
-  .about-text .about-note{margin-top:18px;font-size:14px;color:#8e8c85}
+  .about-text .about-statement::before{content:'\201C';display:block;font-family:Georgia,'Times New Roman',serif;font-style:normal;font-size:64px;line-height:.7;color:rgba(233,231,226,.4);margin-bottom:8px}
+  .about-pv{margin-top:34px}
+  .about-pv p{color:#bdbbb4;font-size:15px;margin:14px 0 18px}
   .about-meta{margin:0}
   @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:28px}}
 </style>
@@ -36,11 +37,27 @@
     <div class="center"><div class="eyebrow">About</div></div>
 
     <div class="about-grid">
-      <div class="about-img"><img src="/assets/about-portrait.jpg?v=19" alt="Benjamin Cahillane before a large-format work"></div>
+      <div class="about-img">
+        <img src="/assets/about-portrait.jpg?v=19" alt="Benjamin Cahillane before a large-format work">
+        <div class="about-pv">
+          <div class="eyebrow">The Private View</div>
+          <p>See new work before anyone else.</p>
+          <form class="ajax-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="80a4ed81-4021-4186-8798-02459c5d3434">
+            <input type="hidden" name="subject" value="Private View signup (about) — benjamincahillane.com">
+            <input type="hidden" name="from_name" value="benjamincahillane.com">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="fieldrow">
+              <input type="email" name="email" required placeholder="Your email address" aria-label="Email address">
+              <button type="submit" class="btn">Request access</button>
+            </div>
+          </form>
+          <div class="form-success">You'll see it first.</div>
+        </div>
+      </div>
       <div class="about-text">
-        <p class="about-statement">“I have never believed that this reality is all there is. There must be something more, just beyond what we can see. I can't explain it, so I visualize it.”<span class="by">Benjamin Cahillane</span></p>
-        <p>He is a contemporary artist working from his studio in Switzerland, where his work grows from a fascination with philosophy and architecture. His works are built on genuine silver: light passes through translucent layers of colour, reaches the metal beneath, and returns, so each surface glows from within and shifts as you move before it. Fine lines drawn into the colour pull the eye into the distance, into spaces that recede without end. They are less pictures than openings onto a reality parallel to our own.</p>
-        <p class="about-note">Each work is signed by hand and sold with a certificate of authenticity.</p>
+        <p class="about-statement">I have never believed that this reality is all there is. There must be something more, just beyond what we can see. I can't explain it, so I visualize it.</p>
+        <p>Benjamin Cahillane is a contemporary artist working from his studio in Switzerland, where his work grows from a fascination with philosophy and architecture. His works are built on genuine silver: light passes through translucent layers of colour, reaches the metal beneath, and returns, so each surface glows from within and shifts as you move before it. Fine lines drawn into the colour pull the eye into the distance, into spaces that recede without end. They are less pictures than openings onto a reality parallel to our own.</p>
 
       <div style="margin-top:44px">
         <div class="eyebrow">Selected exhibitions</div>
