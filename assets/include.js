@@ -41,6 +41,7 @@
         '<div class="foot-links">' +
           '<a href="/privacy.html">Privacy</a>' +
           '<a href="/legal.html">Legal</a>' +
+          '<a href="' + INSTAGRAM + '" target="_blank" rel="noopener" aria-label="Instagram" style="display:inline-flex;align-items:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>' +
         '</div>' +
       '</footer>';
   }
