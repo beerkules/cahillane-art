@@ -27,7 +27,7 @@
     return '' +
       '<header class="site-header"><div class="nav-inner">' +
         '<button class="nav-toggle" aria-label="Open menu"><span></span></button>' +
-        '<a class="nav-word" href="/" aria-label="Benjamin Cahillane"><img src="/assets/logo.png?v=1" alt="Benjamin Cahillane" style="height:34px;width:auto;display:block"></a>' +
+        '<a class="nav-word" href="/" aria-label="Benjamin Cahillane"><img src="/assets/logo.png?v=1" alt="Benjamin Cahillane" style="height:46px;width:auto;display:block"></a>' +
         '<nav class="nav-links">' +
           '<button class="nav-close" aria-label="Close menu">&times;</button>' +
           links +
@@ -38,14 +38,11 @@
   function buildFooter() {
     return '' +
       '<footer class="site-footer">' +
-        '<div class="foot-word"><img src="/assets/logo.png?v=1" alt="Benjamin Cahillane" style="height:28px;width:auto;display:inline-block"></div>' +
-        '<div class="foot-right">' +
-          '<div class="foot-links">' +
-            '<a href="mailto:' + EMAIL + '">Contact</a>' +
-            '<a href="/privacy.html">Privacy</a>' +
-            '<a href="/legal.html">Legal</a>' +
-          '</div>' +
-          '<div class="foot-fine">&copy; ' + YEAR + ' Benjamin Cahillane</div>' +
+        '<div class="foot-fine">&copy; ' + YEAR + ' Benjamin Cahillane</div>' +
+        '<div class="foot-word"><img src="/assets/logo.png?v=1" alt="Benjamin Cahillane" style="height:30px;width:auto;display:block"></div>' +
+        '<div class="foot-links">' +
+          '<a href="/privacy.html">Privacy</a>' +
+          '<a href="/legal.html">Legal</a>' +
         '</div>' +
       '</footer>';
   }
