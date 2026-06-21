@@ -13,34 +13,38 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="/assets/hero.jpg?v=28" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/works/dimension-one.jpg?v=17" fetchpriority="high">
 <link rel="stylesheet" href="/assets/site.css?v=32">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=17">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=17">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":["Person"],"name":"Benjamin Cahillane","url":"https://benjamincahillane.com","sameAs":["https://instagram.com/benjamincahillane"],"jobTitle":"Contemporary Artist"}</script>
+<style>
+  .hero.hero-split{min-height:calc(100svh - 57px);display:grid;grid-template-columns:1.05fr 1fr;align-items:stretch;padding:0;text-align:left;position:relative;overflow:hidden;background:#0a0a0c;}
+  .hero-split .hero-art{position:relative;background-size:cover;background-position:center;}
+  .hero-split .hero-art::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0a0a0c 0%,rgba(10,10,12,.7) 20%,rgba(10,10,12,0) 60%);}
+  .hero-split .hero-text{display:flex;flex-direction:column;justify-content:center;padding:0 clamp(24px,6vw,90px);position:relative;z-index:2;}
+  .hero-split .hero-text .role{margin-top:18px;}
+  .hero-split .hero-text .hook{margin-top:26px;}
+  @media(max-width:860px){
+    .hero.hero-split{grid-template-columns:1fr;min-height:auto;}
+    .hero-split .hero-art{min-height:48vh;order:1;}
+    .hero-split .hero-art::after{background:linear-gradient(180deg,rgba(10,10,12,0) 45%,#0a0a0c 100%);}
+    .hero-split .hero-text{order:2;padding:44px 24px 60px;text-align:center;align-items:center;}
+  }
+</style>
 </head>
 <body>
 <div id="site-header"></div>
 
 <!-- HERO -->
-<header class="hero">
-  <div class="hero-bg" style="background-image:url('/assets/hero.jpg?v=28')" role="img" aria-label="Detail of a large-format artwork in dark petrol glazes with engraved silver linework"></div>
-  <h1 class="wordmark"><span>BENJAMIN</span><span>CAHILLANE</span></h1>
-  <div class="role">Contemporary Artist</div>
-  <div class="rule"></div>
-  <p class="hook">Silence in space.</p>
-  <div class="scroll-cue" aria-hidden="true"><span></span></div>
-</header>
-<section class="section process">
-  <div class="wrap center">
-    <div class="eyebrow">The Work</div>
-    <div class="process-grid">
-      <div class="process-step"><div class="process-img"><img src="/assets/process/silver.jpg?v=17" alt="Genuine silver leaf laid by hand" loading="lazy"></div><h3>Silver</h3><p>Each work begins as a mirror of genuine silver leaf, laid by hand.</p></div>
-      <div class="process-step"><div class="process-img"><img src="/assets/process/glaze.jpg?v=29" alt="Translucent pigment glazes" loading="lazy"></div><h3>Glazes</h3><p>Dozens of translucent pigment layers darken it toward black. The light comes from beneath the colour.</p></div>
-      <div class="process-step"><div class="process-img"><img src="/assets/process/engraving.jpg?v=29" alt="Lines engraved by hand into the metal" loading="lazy"></div><h3>Engraving</h3><p>Straight lines, engraved by hand, cut back to the metal: the architecture of a world.</p></div>
-    </div>
+<header class="hero hero-split">
+  <div class="hero-text">
+    <h1 class="wordmark"><span>BENJAMIN</span><span>CAHILLANE</span></h1>
+    <div class="role">Contemporary Artist</div>
+    <p class="hook">Silence in space.</p>
   </div>
-</section>
+  <div class="hero-art" style="background-image:url('/assets/works/dimension-one.jpg?v=17')" role="img" aria-label="Engraved silver linework forming a deep architectural space in dark glazes"></div>
+</header>
 
 <!-- FEATURED WORKS -->
 <section class="section">
