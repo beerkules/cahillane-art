@@ -28,13 +28,7 @@
   .hero-headline span{display:block;}
   .hero-cta{margin-top:36px;align-self:flex-start;}
   #private-view{scroll-margin-top:90px;}
-  .pv-card{position:relative;max-width:720px;margin:0 auto;border:1px solid rgba(233,231,226,.22);padding:60px 48px;text-align:center;background:rgba(255,255,255,.012);}
-  .pv-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:38px 0 4px;text-align:center}
-  .pv-ben{padding:0 22px;border-left:1px solid rgba(233,231,226,.12)}
-  .pv-ben:first-child{border-left:0}
-  .pv-ben h3{font:600 11px var(--display);letter-spacing:.24em;text-transform:uppercase;color:#f2f0ea;margin:0}
-  .pv-ben p{color:#a8a69f;font-size:13.5px;line-height:1.7;margin:10px 0 0}
-  @media(max-width:640px){.pv-benefits{grid-template-columns:1fr}.pv-ben{border-left:0;border-top:1px solid rgba(233,231,226,.12);padding:20px 0}.pv-ben:first-child{border-top:0}}
+  .pv-card{position:relative;max-width:600px;margin:0 auto;border:1px solid rgba(233,231,226,.22);padding:60px 48px;text-align:center;background:rgba(255,255,255,.012);}
   .pv-card .pv-c{position:absolute;width:10px;height:10px;border:1px solid rgba(233,231,226,.45);}
   .pv-card .tl{top:-1px;left:-1px;border-right:0;border-bottom:0}
   .pv-card .tr{top:-1px;right:-1px;border-left:0;border-bottom:0}
@@ -107,11 +101,6 @@
       <span class="pv-c tl"></span><span class="pv-c tr"></span><span class="pv-c bl"></span><span class="pv-c br"></span>
       <div class="eyebrow">The Private View</div>
       <p class="lead pv-statement">Be the first to see new work, before it reaches anyone else.</p>
-      <div class="pv-benefits">
-        <div class="pv-ben"><h3>First view</h3><p>See new works first, with the chance to reserve before they are offered publicly.</p></div>
-        <div class="pv-ben"><h3>Inside the studio</h3><p>Quiet, occasional previews of new work as it leaves the studio.</p></div>
-        <div class="pv-ben"><h3>A direct line</h3><p>Priority on original works and a direct conversation with the artist.</p></div>
-      </div>
       <form class="ajax-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="80a4ed81-4021-4186-8798-02459c5d3434">
         <input type="hidden" name="subject" value="Private View signup (home) — benjamincahillane.com">
