@@ -42,7 +42,7 @@ HEAD = """<!DOCTYPE html>
 """
 
 FOOT = """<div id="site-footer"></div>
-<script src="/assets/include.js?v=33" defer></script>
+<script src="/assets/include.js?v=34" defer></script>
 </body>
 </html>
 """
@@ -55,7 +55,7 @@ def esc(s):
 def card(w):
     label = STATUS_LABEL.get(w["status"], "")
     return (
-        f'<a class="card" data-status="{esc(w["status"])}" href="/work/{esc(w["slug"])}.html">'
+        f'<a class="card" data-cat="original" data-status="{esc(w["status"])}" href="/work/{esc(w["slug"])}.html">'
         f'<div class="card-img"><img src="{esc(w["thumb"])}?v=17" alt="{esc(w["title"])}, {esc(w["year"])}" loading="lazy"></div>'
         f'<div class="card-meta">'
         f'<span class="card-title">{esc(w["title"])}</span>'
@@ -68,23 +68,26 @@ def card(w):
 
 def build_works(works):
     cards = "\n".join(card(w) for w in works)
+    edcards = "\n".join(edition_card(w) for w in works)
     head = HEAD.format(
-        title="Works — Benjamin Cahillane",
-        desc="Original works by contemporary artist Benjamin Cahillane.",
-        og_title="Benjamin Cahillane — Works",
+        title="Works & Editions — Benjamin Cahillane",
+        desc="Original works and limited edition prints by contemporary artist Benjamin Cahillane.",
+        og_title="Benjamin Cahillane — Works & Editions",
         og_image=f"{DOMAIN}/assets/og.jpg",
         og_url=f"{DOMAIN}/works.html",
     )
     body = f"""<main class="section">
   <div class="wrap center">
+    <style>.works-filter .filter-sep{{display:inline-block;width:1px;height:13px;background:rgba(233,231,226,.28);margin:0 12px;vertical-align:middle}}</style>
     <div class="eyebrow">Liminal Dimensions</div>
-    <p class="lead">Original works. Enquire for availability and price.</p>
-    <div class="works-filter"><button data-f="all" class="active">All</button><button data-f="available">Available</button></div>
+    <p class="lead">Original works and limited editions.</p>
+    <div class="works-filter"><button data-f="all" class="active">All</button><button data-f="available">Available</button><span class="filter-sep"></span><button data-f="editions">Editions</button></div>
     <div class="grid grid-3" style="text-align:left">
 {cards}
+{edcards}
     </div>
-    <script>(function(){{var b=document.querySelectorAll('.works-filter button'),c=document.querySelectorAll('.grid .card');b.forEach(function(x){{x.addEventListener('click',function(){{b.forEach(function(y){{y.classList.remove('active')}});x.classList.add('active');var f=x.dataset.f;c.forEach(function(k){{k.style.display=(f==='all'||k.dataset.status==='available')?'':'none'}})}})}})}})();</script>
-    <p class="form-hint" style="margin-top:48px">Selected works are also available as limited edition prints &mdash; <a href="/editions.html" style="color:var(--ink)">view editions</a>.</p>
+    <script>(function(){{var b=document.querySelectorAll('.works-filter button'),c=document.querySelectorAll('.grid .card');function apply(f){{c.forEach(function(k){{var cat=k.dataset.cat,st=k.dataset.status,show;if(f==='editions')show=cat==='edition';else if(f==='available')show=cat==='original'&&st==='available';else show=cat==='original';k.style.display=show?'':'none';}});}}b.forEach(function(x){{x.addEventListener('click',function(){{b.forEach(function(y){{y.classList.remove('active')}});x.classList.add('active');apply(x.dataset.f);}})}});if(location.hash==='#editions'){{var e=document.querySelector('.works-filter [data-f=editions]');if(e){{b.forEach(function(y){{y.classList.remove('active')}});e.classList.add('active');apply('editions');return;}}}}apply('all');}})();</script>
+    <p class="form-hint" style="margin-top:48px">Limited editions are signed, numbered Giclée prints with a certificate of authenticity &mdash; from &euro; 450.</p>
   </div>
 </main>
 """
@@ -173,7 +176,7 @@ FROM_PRICE = EDITION_SIZES[0][1]
 
 def edition_card(w):
     return (
-        f'<a class="card" href="/edition/{esc(w["slug"])}.html">'
+        f'<a class="card" data-cat="edition" href="/edition/{esc(w["slug"])}.html">'
         f'<div class="card-img"><img src="{esc(w["image"])}?v=17" alt="{esc(w["title"])} — limited edition print" loading="lazy"></div>'
         f'<div class="card-meta"><span class="card-title">{esc(w["title"])}</span><span class="card-price" style="font-size:13px;letter-spacing:.04em;color:var(--ink-bright);white-space:nowrap">From {FROM_PRICE}</span></div>'
         f'<div class="card-sub">{EDITION["medium"]} · {EDITION["run"]}</div>'
@@ -181,22 +184,22 @@ def edition_card(w):
     )
 
 def build_editions(works):
-    cards = "\n".join(edition_card(w) for w in works)
-    head = HEAD.format(title="Editions — Benjamin Cahillane",
-        desc="Limited edition prints of the Liminal Dimensions — each signed and numbered, with a certificate of authenticity.",
-        og_title="Benjamin Cahillane — Editions", og_image=f"{DOMAIN}/assets/og.jpg", og_url=f"{DOMAIN}/editions.html")
-    body = f"""<main class="section">
-  <div class="wrap center">
-    <div class="eyebrow">Editions</div>
-    <p class="lead">Limited edition prints, signed and numbered, with a certificate of authenticity.</p>
-    <div class="grid grid-3" style="text-align:left">
-{cards}
-    </div>
-    <p class="form-hint" style="margin-top:48px">Each print accompanies an original from <a href="/works.html" style="color:var(--ink)">Liminal Dimensions</a>.</p>
-  </div>
-</main>
+    # Editions now live on the Works page under the "Editions" filter.
+    # Keep editions.html as a redirect so old links/bookmarks still work.
+    redirect = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url=/works.html#editions">
+<link rel="canonical" href="https://benjamincahillane.com/works.html#editions">
+<title>Editions — Benjamin Cahillane</title>
+<meta name="robots" content="noindex">
+<script>location.replace('/works.html#editions');</script>
+</head>
+<body><a href="/works.html#editions">Original works and limited editions</a></body>
+</html>
 """
-    with open(os.path.join(ROOT,"editions.html"),"w") as f: f.write(head+body+FOOT)
+    with open(os.path.join(ROOT,"editions.html"),"w") as f: f.write(redirect)
     print("wrote editions.html")
 
 def build_edition(w, prev_w, next_w):
