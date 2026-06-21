@@ -87,7 +87,7 @@ def build_works(works):
 {edcards}
     </div>
     <script>(function(){{var b=document.querySelectorAll('.works-filter button'),c=document.querySelectorAll('.grid .card');function apply(f){{c.forEach(function(k){{var cat=k.dataset.cat,st=k.dataset.status,show;if(f==='editions')show=cat==='edition';else if(f==='available')show=cat==='original'&&st==='available';else show=cat==='original';k.style.display=show?'':'none';}});}}b.forEach(function(x){{x.addEventListener('click',function(){{b.forEach(function(y){{y.classList.remove('active')}});x.classList.add('active');apply(x.dataset.f);}})}});if(location.hash==='#editions'){{var e=document.querySelector('.works-filter [data-f=editions]');if(e){{b.forEach(function(y){{y.classList.remove('active')}});e.classList.add('active');apply('editions');return;}}}}apply('all');}})();</script>
-    <p class="form-hint" style="margin-top:48px">Limited editions are signed, numbered Giclée prints with a certificate of authenticity &mdash; from &euro; 450.</p>
+    <p class="form-hint" style="margin-top:48px">Be the first to see new work &mdash; <a href="/#private-view" style="color:var(--ink)">join the Private View</a>.</p>
   </div>
 </main>
 """
