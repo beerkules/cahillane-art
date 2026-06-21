@@ -168,7 +168,7 @@ def build_work(w, prev_w, next_w):
 
 
 EDITION = {"medium":"Giclée print","run":"Edition of 25"}
-EDITION_SIZES = [("40 × 50 cm","€ 330"),("60 × 80 cm","€ 570"),("90 × 120 cm","€ 930")]
+EDITION_SIZES = [("45 × 60 cm","€ 410"),("60 × 80 cm","€ 640"),("90 × 120 cm","€ 1080")]
 FROM_PRICE = EDITION_SIZES[0][1]
 
 def edition_card(w):
