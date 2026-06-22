@@ -43,7 +43,7 @@ HEAD = """<!DOCTYPE html>
 """
 
 FOOT = """<div id="site-footer"></div>
-<script src="/assets/include.js?v=40" defer></script>
+<script src="/assets/include.js?v=41" defer></script>
 </body>
 </html>
 """

@@ -115,6 +115,35 @@
     onScroll();
   }
 
+  function wireAnchorScroll() {
+    var TARGET = "private-view";
+    function isTarget(hash) { return hash === "#" + TARGET; }
+    function center(smooth) {
+      var el = document.getElementById(TARGET);
+      if (el) el.scrollIntoView({ block: "center", behavior: smooth ? "smooth" : "auto" });
+    }
+    // Same-page clicks to the section: smooth-center instead of native jump.
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest("a[href]");
+      if (!a) return;
+      var url;
+      try { url = new URL(a.getAttribute("href"), location.href); } catch (_) { return; }
+      if (!isTarget(url.hash)) return;
+      var samePage = url.pathname.replace(/index\.html$/, "") === location.pathname.replace(/index\.html$/, "");
+      if (!samePage) return; // cross-page link: let it navigate, load handler centers it
+      e.preventDefault();
+      if (location.hash !== url.hash) history.pushState(null, "", url.hash);
+      center(true);
+    });
+    window.addEventListener("hashchange", function () { if (isTarget(location.hash)) center(true); });
+    // Direct load of /#private-view: re-center after layout/images settle.
+    if (isTarget(location.hash)) {
+      center(false);
+      window.addEventListener("load", function () { setTimeout(function () { center(false); }, 60); });
+      setTimeout(function () { center(false); }, 350);
+    }
+  }
+
   function init() {
     var h = document.getElementById("site-header");
     var f = document.getElementById("site-footer");
@@ -125,6 +154,7 @@
     wireScrollCue();
     wireHeaderScroll();
     wireHeroFade();
+    wireAnchorScroll();
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
