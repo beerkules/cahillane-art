@@ -19,11 +19,10 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":["Person"],"name":"Benjamin Cahillane","url":"https://benjamincahillane.com","sameAs":["https://instagram.com/benjamincahillane"],"jobTitle":"Contemporary Artist"}</script>
 <style>
   .site-header{position:fixed;left:0;right:0;top:0;}
-  .hero.hero-split{min-height:100svh;display:grid;grid-template-columns:0.95fr 1.05fr;align-items:stretch;padding:0;text-align:left;position:relative;overflow:hidden;background:#0a0a0c;}
-  .hero-split .hero-art{position:relative;overflow:hidden;background:#06070a;}
-  .hero-split .hero-art .hero-svg{position:absolute;inset:0;width:100%;height:100%;display:block;}
-  .hero-split .hero-art::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,12,.92) 0%,rgba(10,10,12,0) 16%,rgba(10,10,12,0) 55%,#0a0a0c 96%),linear-gradient(90deg,#0a0a0c 0%,rgba(10,10,12,.7) 20%,rgba(10,10,12,0) 60%);}
-  .hero-split .hero-text{display:flex;flex-direction:column;justify-content:center;padding:0 24px 0 max(24px, calc((100vw - var(--maxw)) / 2 + 24px));position:relative;z-index:2;}
+  .hero.hero-img{position:relative;min-height:100svh;overflow:hidden;background:#06070a;display:flex;flex-direction:row;align-items:center;justify-content:flex-start;text-align:left;}
+  .hero-img .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(1.12) contrast(1.02);}
+  .hero-img .hero-scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,11,.92) 0%,rgba(8,8,11,.55) 24%,rgba(8,8,11,0) 52%),linear-gradient(180deg,rgba(8,8,11,.5) 0%,rgba(8,8,11,0) 14%),linear-gradient(0deg,rgba(8,8,11,.45) 0%,rgba(8,8,11,0) 22%);}
+  .hero-img .hero-text{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:0 24px 0 max(24px, calc((100vw - var(--maxw)) / 2 + 24px));}
   .hero-headline{font-family:var(--display);font-weight:600;font-size:clamp(34px,5.6vw,60px);line-height:1.16;letter-spacing:.14em;color:var(--ink-bright);}
   .hero-headline span{display:block;}
   .hero-cta{margin-top:36px;align-self:flex-start;}
@@ -39,10 +38,9 @@
   .pv-card .form-hint{margin-top:14px}
   @media(max-width:560px){.pv-card{padding:48px 24px}}
   @media(max-width:860px){
-    .hero.hero-split{grid-template-columns:1fr;min-height:auto;}
-    .hero-split .hero-art{min-height:48vh;order:1;}
-    .hero-split .hero-art::after{background:linear-gradient(180deg,rgba(10,10,12,0) 45%,#0a0a0c 100%);}
-    .hero-split .hero-text{order:2;padding:48px 24px 64px;text-align:center;align-items:center;}
+    .hero-img .hero-bg{background-position:center;}
+    .hero-img .hero-scrim{background:linear-gradient(180deg,rgba(10,10,12,.7) 0%,rgba(10,10,12,.4) 45%,rgba(10,10,12,.82) 100%);}
+    .hero-img .hero-text{text-align:center;align-items:center;padding:0 24px;}
     .hero-cta{align-self:center;}
   }
 </style>
@@ -51,22 +49,13 @@
 <div id="site-header"></div>
 
 <!-- HERO -->
-<header class="hero hero-split">
+<header class="hero hero-img">
+  <div class="hero-bg" style="background-image:url('/assets/hero-bg.jpg?v=3')" role="img" aria-label="Dark dimensional space with fine perspective lines receding to a glowing horizon"></div>
+  <div class="hero-scrim"></div>
   <div class="hero-text">
     <h1 class="hero-headline"><span>Designing</span><span>alternative</span><span>realities.</span></h1>
     <a class="btn hero-cta" href="/works.html">View Works</a>
   </div>
-  <div class="hero-art" role="img" aria-label="Abstract silver linework forming drifting dimensional planes"><svg class="hero-svg" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<defs>
-<radialGradient id="hbg" cx="52%" cy="48%" r="68%"><stop offset="0%" stop-color="#262a31"/><stop offset="58%" stop-color="#14161b"/><stop offset="100%" stop-color="#06070a"/></radialGradient>
-<filter id="hblur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="30"/></filter>
-<filter id="hgrain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch" result="t"/><feColorMatrix in="t" type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0.05"/></feComponentTransfer></filter>
-</defs>
-<rect width="1000" height="800" fill="url(#hbg)"/>
-<g><ellipse cx="473" cy="368" rx="245" ry="215" fill="rgba(190,200,222,0.16)" filter="url(#hblur)"/><ellipse cx="388" cy="436" rx="132" ry="201" fill="rgba(220,214,200,0.17)" filter="url(#hblur)"/><ellipse cx="341" cy="382" rx="178" ry="172" fill="rgba(205,210,218,0.29)" filter="url(#hblur)"/></g>
-<g><polygon points="-93.2,-27.8 570.3,-53.5 644.0,590.3 -16.9,610.6" fill="rgba(150,156,168,.05)" stroke="rgba(196,206,224,0.54)" stroke-width="1.21"/><polygon points="-0.5,50.1 497.2,30.8 552.5,513.6 56.8,528.9" fill="none" stroke="rgba(224,216,202,0.22)" stroke-width="0.85"/><polygon points="92.3,128.0 424.1,115.2 460.9,437.0 130.5,447.2" fill="none" stroke="rgba(196,206,224,0.15)" stroke-width="1.05"/><polygon points="185.1,205.9 351.0,199.5 369.4,360.4 204.2,365.5" fill="none" stroke="rgba(224,216,202,0.07)" stroke-width="1.03"/><polygon points="345.1,179.2 936.5,157.1 974.5,761.5 372.9,778.7" fill="rgba(150,156,168,.05)" stroke="rgba(224,216,202,0.36)" stroke-width="1.19"/><polygon points="423.5,251.8 867.1,235.3 895.5,688.6 444.4,701.4" fill="none" stroke="rgba(224,216,202,0.15)" stroke-width="0.83"/><polygon points="501.9,324.5 797.6,313.4 816.6,615.6 515.8,624.2" fill="none" stroke="rgba(196,206,224,0.10)" stroke-width="0.88"/><polygon points="580.3,397.1 728.2,391.6 737.7,542.7 587.3,547.0" fill="none" stroke="rgba(224,216,202,0.05)" stroke-width="0.97"/><polygon points="205.4,364.6 690.2,338.0 688.7,793.3 212.3,815.8" fill="rgba(150,156,168,.05)" stroke="rgba(196,206,224,0.30)" stroke-width="1.49"/><polygon points="266.0,417.7 629.6,397.7 628.4,739.3 271.1,756.1" fill="none" stroke="rgba(196,206,224,0.12)" stroke-width="0.97"/><polygon points="326.6,470.8 569.0,457.5 568.2,685.2 330.0,696.4" fill="none" stroke="rgba(224,216,202,0.08)" stroke-width="0.86"/><polygon points="387.2,523.9 508.4,517.3 508.0,631.1 388.9,636.7" fill="none" stroke="rgba(196,206,224,0.04)" stroke-width="0.82"/><polygon points="624.5,168.9 1022.4,152.3 985.0,554.6 588.1,580.5" fill="rgba(150,156,168,.05)" stroke="rgba(196,206,224,0.25)" stroke-width="1.33"/><polygon points="668.9,217.5 967.3,205.0 939.2,506.8 641.6,526.2" fill="none" stroke="rgba(196,206,224,0.10)" stroke-width="1.08"/><polygon points="713.3,266.1 912.2,257.7 893.5,458.9 695.1,471.8" fill="none" stroke="rgba(224,216,202,0.07)" stroke-width="1.20"/><polygon points="757.6,314.6 857.1,310.5 847.8,411.0 748.5,417.5" fill="none" stroke="rgba(224,216,202,0.03)" stroke-width="0.91"/><polygon points="14.2,350.0 370.0,328.7 305.8,701.6 -60.4,724.7" fill="rgba(150,156,168,.05)" stroke="rgba(224,216,202,0.19)" stroke-width="1.04"/><polygon points="50.3,395.0 317.2,379.1 269.0,658.7 -5.6,676.0" fill="none" stroke="rgba(196,206,224,0.08)" stroke-width="1.02"/><polygon points="86.4,440.0 264.3,429.4 232.2,615.8 49.1,627.4" fill="none" stroke="rgba(224,216,202,0.05)" stroke-width="1.13"/><polygon points="122.5,485.0 211.5,479.7 195.4,572.9 103.9,578.7" fill="none" stroke="rgba(224,216,202,0.03)" stroke-width="0.91"/></g>
-<rect width="1000" height="800" filter="url(#hgrain)" style="mix-blend-mode:soft-light"/>
-</svg></div>
 </header>
 
 <!-- FEATURED WORKS -->
