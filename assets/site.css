@@ -69,6 +69,7 @@ a { color:inherit; text-decoration:none; }
 .nav-toggle span::before, .nav-toggle span::after { content:''; position:absolute; left:0; width:22px; height:1.5px; background:var(--ink-bright); }
 .nav-toggle span::before { top:-6px; }
 .nav-toggle span::after { top:6px; }
+.nav-toggle::after { content:''; position:absolute; inset:-16px; }
 
 @media (max-width:760px) {
   .nav-toggle { display:block; order:2; transform:translateY(-2px); }

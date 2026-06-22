@@ -13,20 +13,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=38">
+<link rel="stylesheet" href="/assets/site.css?v=39">
 <link rel="icon" type="image/png" href="/assets/favicon.png?v=24">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=24">
 <style>
-  .about-grid{display:grid;grid-template-columns:0.82fr 1.18fr;gap:56px;align-items:start;margin:46px 0 0}
+  .about-grid{display:grid;grid-template-columns:0.82fr 1.18fr;grid-template-areas:"img text" "pv text";column-gap:56px;row-gap:34px;align-items:start;margin:46px 0 0}
+  .about-grid .about-img{grid-area:img}
+  .about-grid .about-text{grid-area:text}
+  .about-grid .about-pv{grid-area:pv}
   .about-grid .about-img img{width:100%;height:auto;display:block;border:1px solid var(--line)}
   .about-text{color:#bdbbb4;line-height:1.9;font-size:16px}
   .about-text p+p{margin-top:18px}
   .about-text .about-statement{font-style:italic;font-size:20px;line-height:1.7;color:#e9e7e2;margin:0 0 28px}
   .about-text .about-statement::before{content:'\201C';font-family:Georgia,'Times New Roman',serif;font-style:normal;font-size:46px;line-height:0;color:rgba(233,231,226,.42);margin-right:8px;vertical-align:-16px}
-  .about-pv{margin-top:34px}
+  .about-pv{margin-top:0}
   .about-pv p{color:#bdbbb4;font-size:15px;margin:14px 0 18px}
   .about-meta{margin:0}
-  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:28px}}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;grid-template-areas:"img" "text" "pv";row-gap:28px}}
 </style>
 </head>
 <body>
@@ -39,21 +42,6 @@
     <div class="about-grid">
       <div class="about-img">
         <img src="/assets/about-portrait.jpg?v=20" alt="Benjamin Cahillane before a large-format silver work">
-        <div class="about-pv">
-          <div class="eyebrow">The Private View</div>
-          <p>See new work before anyone else.</p>
-          <form class="ajax-form" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="80a4ed81-4021-4186-8798-02459c5d3434">
-            <input type="hidden" name="subject" value="Private View signup (about) — benjamincahillane.com">
-            <input type="hidden" name="from_name" value="benjamincahillane.com">
-            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-            <div class="fieldrow">
-              <input type="email" name="email" required placeholder="Your email address" aria-label="Email address">
-              <button type="submit" class="btn">Request access</button>
-            </div>
-          </form>
-          <div class="form-success">You'll see it first.</div>
-        </div>
       </div>
       <div class="about-text">
         <p class="about-statement">I have never believed that this reality is all there is. There must be something more, just beyond what we can imagine. I can't explain it, so I visualize it.</p>
@@ -75,6 +63,22 @@
         <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:10px"><span style="border:1px solid rgba(233,231,226,.2);padding:7px 14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#bdbbb4">London</span><span style="border:1px solid rgba(233,231,226,.2);padding:7px 14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#bdbbb4">Antwerp</span><span style="border:1px solid rgba(233,231,226,.2);padding:7px 14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#bdbbb4">Hamburg</span><span style="border:1px solid rgba(233,231,226,.2);padding:7px 14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#bdbbb4">Utrecht</span><span style="border:1px solid rgba(233,231,226,.2);padding:7px 14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#bdbbb4">Berlin</span></div>
       </div>
 
+      </div>
+
+      <div class="about-pv">
+        <div class="eyebrow">The Private View</div>
+        <p>See new work before anyone else.</p>
+        <form class="ajax-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="80a4ed81-4021-4186-8798-02459c5d3434">
+          <input type="hidden" name="subject" value="Private View signup (about) — benjamincahillane.com">
+          <input type="hidden" name="from_name" value="benjamincahillane.com">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="fieldrow">
+            <input type="email" name="email" required placeholder="Your email address" aria-label="Email address">
+            <button type="submit" class="btn">Request access</button>
+          </div>
+        </form>
+        <div class="form-success">You'll see it first.</div>
       </div>
     </div>
   </div>
