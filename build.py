@@ -80,7 +80,7 @@ def build_works(works):
     body = f"""<main class="section">
   <div class="wrap center">
     <style>.works-filter .filter-sep{{display:inline-block;width:1px;height:13px;background:rgba(233,231,226,.28);margin:0 12px;vertical-align:middle}}</style>
-    <div class="eyebrow">Originals and limited Editions.</div>
+    <div class="eyebrow">Originals and limited Editions</div>
     <div class="works-filter"><button data-f="all" class="active">All</button><button data-f="available">Available</button><span class="filter-sep"></span><button data-f="editions">Editions</button></div>
     <div class="grid grid-3" style="text-align:left">
 {cards}
